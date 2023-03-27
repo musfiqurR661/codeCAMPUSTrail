@@ -15,7 +15,6 @@ public class Start extends Application {
        stage.setScene(scene);
        stage.show();
     }
-//ohuiiowuretwrt
     public static void main(String[] args) {
         launch(args);
     }
