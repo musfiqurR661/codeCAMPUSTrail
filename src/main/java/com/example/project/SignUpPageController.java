@@ -56,8 +56,8 @@ public class SignUpPageController {
     @FXML
     void signUpClicked(ActionEvent event) {
         String url = "jdbc:mysql://127.0.0.1/musfiq";
-        String username = "musfiq";
-        String password = "1122";
+        String username = "root";
+        String password = "";
         System.out.println("Connecting database...");
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Database connected!");
@@ -86,7 +86,7 @@ public class SignUpPageController {
                 pst.setString(1,user_Fullname);
                 pst.setString(2,user_email);
                 pst.setString(3,User_username);
-                pst.setString(4,password);
+                pst.setString(4,user_password);
                 pst.execute();
 
                 System.out.println("Insert successful");
