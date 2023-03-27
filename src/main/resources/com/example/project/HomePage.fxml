@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.HomePageController">
+   <children>
+      <AnchorPane prefHeight="275.0" prefWidth="1080.0" style="-fx-background-color: bisque;">
+         <children>
+            <Label fx:id="welcome" layoutX="26.0" layoutY="28.0" prefHeight="43.0" prefWidth="358.0" text="Welcome to codeCampus" textFill="#4a3333">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="moto" layoutX="92.0" layoutY="71.0" prefHeight="51.0" prefWidth="285.0" text="Moto ...will be updated ..">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="275.0" prefHeight="400.0" prefWidth="1080.0" style="-fx-background-color: coral;">
+         <children>
+            <Button fx:id="newsFeed" layoutX="98.0" layoutY="134.0" mnemonicParsing="false" onAction="#newsFeedClick" prefHeight="174.0" prefWidth="77.0" text="NewsFeed" />
+            <Button fx:id="teachers" layoutX="309.0" layoutY="134.0" mnemonicParsing="false" onAction="#teachersClick" prefHeight="174.0" prefWidth="77.0" text="Teacher's " />
+            <Button fx:id="contest" layoutX="686.0" layoutY="134.0" mnemonicParsing="false" onAction="#contestMouseClick" prefHeight="174.0" prefWidth="77.0" text="contest" />
+            <Button fx:id="learPort" layoutX="894.0" layoutY="163.0" mnemonicParsing="false" onAction="#learnPortMouesCllick" prefHeight="116.0" prefWidth="107.0" text="Learning Portal" />
+            <Button fx:id="student" layoutX="488.0" layoutY="134.0" mnemonicParsing="false" onAction="#studentclick" prefHeight="174.0" prefWidth="77.0" text="Students" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
