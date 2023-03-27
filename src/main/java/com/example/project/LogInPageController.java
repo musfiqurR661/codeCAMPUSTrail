@@ -43,15 +43,15 @@ public class LogInPageController {
     @FXML
     void loginClicked(ActionEvent event) {
         String input=inputbox.getText();
-        String pass=passwordbox.getText();
+        String pas=passwordbox.getText();
 
         System.out.println(input);
-        System.out.println(pass);
+        System.out.println(pas);
 
 
         String url = "jdbc:mysql://127.0.0.1/musfiq";
-        String username = "musfiq";
-        String password = "1122";
+        String username = "root";
+        String password = "";
         System.out.println("Connecting database...");
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
@@ -62,18 +62,21 @@ public class LogInPageController {
 
         try {
             String chk1 = "Select * from useraccounts where email=?";
+            String chk2 = "Select * from useraccounts where username=?";
             Connection con;
             PreparedStatement pst1, pst2;
             con = DriverManager.getConnection(url, username, password);
             pst1 = con.prepareStatement(chk1);
-
+            pst2 = con.prepareStatement(chk2);
             pst1.setString(1, input);
-
+            pst2.setString(1,input);
             ResultSet rs1;
+            ResultSet rs2;
             rs1 = pst1.executeQuery();
+            rs2 = pst2.executeQuery();
             if (rs1.next()) {
-                String pas = rs1.getString("password");
-                if (pas.equals(password)) {
+                String pass = rs1.getString("password");
+                if (pas.equals(pass)) {
                     try {
                         Parent root = FXMLLoader.load((getClass().getResource("HomePage.fxml")));
                         Scene scene = new Scene(root);
@@ -82,14 +85,36 @@ public class LogInPageController {
                     }catch (Exception e) {
                         throw new RuntimeException(e);
                     }
-                } else {
+                }
+                else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error");
                     alert.setHeaderText("Wrong password");
                     alert.setContentText("Please enter your password correctly!");
                     alert.showAndWait();
                 }
-            }else {
+            }
+           else if (rs2.next()) {
+                String pass = rs2.getString("password");
+                if (pas.equals(pass)) {
+                    try {
+                        Parent root = FXMLLoader.load((getClass().getResource("HomePage.fxml")));
+                        Scene scene = new Scene(root);
+                        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                        stage.setScene(scene);
+                    }catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Wrong password");
+                    alert.setContentText("Please enter your password correctly!");
+                    alert.showAndWait();
+                }
+            }
+            else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Wrong email/password");
