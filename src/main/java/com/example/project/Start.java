@@ -16,6 +16,9 @@ public class Start extends Application {
        stage.show();
        //System.out.println("MARA");
        //ar na bhai..
+
+       //partasina keno
+
     }
     public static void main(String[] args) {
         launch(args);
