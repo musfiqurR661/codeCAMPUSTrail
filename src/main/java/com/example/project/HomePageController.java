@@ -58,7 +58,6 @@ public class HomePageController {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-
         }
 
         @FXML
