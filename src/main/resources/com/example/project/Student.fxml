@@ -8,14 +8,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.StudentController">
    <children>
-      <VBox layoutY="56.0" prefHeight="619.0" prefWidth="122.0" style="-fx-background-color: pink;">
-         <children>
-            <Button mnemonicParsing="false" prefHeight="114.0" prefWidth="150.0" text="NewsFeed" />
-            <Button mnemonicParsing="false" prefHeight="127.0" prefWidth="150.0" text="Teacher's " />
-            <Button mnemonicParsing="false" prefHeight="124.0" prefWidth="150.0" text="Students" />
-            <Button mnemonicParsing="false" prefHeight="130.0" prefWidth="150.0" text="contest" />
-            <Button mnemonicParsing="false" prefHeight="126.0" prefWidth="150.0" text="Learning Portal" />
-         </children></VBox>
       <AnchorPane layoutX="126.0" layoutY="43.0" prefHeight="638.0" prefWidth="931.0">
          <children>
             <AnchorPane layoutX="627.0" layoutY="258.0" prefHeight="379.0" prefWidth="326.0" style="-fx-background-color: gray;" />
@@ -33,5 +25,14 @@
          </children>
       </HBox>
       <Button layoutY="1.0" mnemonicParsing="false" onAction="#gotoHomePage" text="Back" />
+      <VBox layoutY="52.0" prefHeight="619.0" prefWidth="122.0" style="-fx-background-color: pink;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#gotoNewsFeed" prefHeight="114.0" prefWidth="150.0" text="NewsFeed" />
+            <Button mnemonicParsing="false" onAction="#gotoTeachersPortal" prefHeight="127.0" prefWidth="150.0" text="Teacher's " />
+            <Button mnemonicParsing="false" onAction="#gotoStudentsPortal" prefHeight="124.0" prefWidth="150.0" text="Students" />
+            <Button mnemonicParsing="false" onAction="#gotoContestPage" prefHeight="130.0" prefWidth="150.0" text="contest" />
+            <Button mnemonicParsing="false" onAction="#gotoLearningPortal" prefHeight="126.0" prefWidth="150.0" text="Learning Portal" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
