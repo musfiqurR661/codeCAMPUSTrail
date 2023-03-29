@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="391bc0e2-d93a-4a42-8201-9c3895fe444b" name="Changes" comment="aa">
+    <list default="true" id="391bc0e2-d93a-4a42-8201-9c3895fe444b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/ContestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/ContestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/LearninPortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/LearninPortController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/SignUpPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/SignUpPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/NewsFeedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/NewsFeedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/LearningPort.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/LearningPort.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/Student.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/Student.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/Teacher.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/Teacher.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/contest.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/contest.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/newsFeed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/newsFeed.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +33,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -80,7 +82,7 @@
   <component name="RunManager">
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.project.Start" />
-      <module name="codeCAMPUSTrail" />
+      <module name="Project" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.project.*" />
@@ -93,7 +95,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Start" />
         <item itemvalue="Application.Start" />
       </list>
     </recent_temporary>
@@ -120,7 +121,6 @@
       <workItem from="1679985474123" duration="154000" />
       <workItem from="1679986633984" duration="302000" />
       <workItem from="1680077880685" duration="2361000" />
-      <workItem from="1680084828010" duration="2460000" />
     </task>
     <servers />
   </component>
