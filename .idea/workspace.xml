@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391bc0e2-d93a-4a42-8201-9c3895fe444b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_30_2023_12_14_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_30_2023_12_14_AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_30_2023_12_16_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_30_2023_12_16_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/LogInPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/LogInPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/Start.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +76,7 @@
   <component name="RunManager">
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.project.Start" />
-      <module name="Project" />
+      <module name="codeCAMPUSTrail" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.project.*" />
@@ -86,6 +89,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Start" />
+        <item itemvalue="Application.Start" />
+        <item itemvalue="Application.Start" />
         <item itemvalue="Application.Start" />
       </list>
     </recent_temporary>
@@ -111,10 +117,8 @@
       <workItem from="1679980526048" duration="4881000" />
       <workItem from="1679985474123" duration="154000" />
       <workItem from="1679986633984" duration="302000" />
-      <workItem from="1680077880685" duration="4229000" />
-      <workItem from="1680083803210" duration="167000" />
-      <workItem from="1680084041051" duration="643000" />
-      <workItem from="1680106557837" duration="2390000" />
+      <workItem from="1680077880685" duration="2361000" />
+      <workItem from="1680113627209" duration="777000" />
     </task>
     <servers />
   </component>
