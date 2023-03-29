@@ -36,19 +36,12 @@ public class HomePageController {
         private Label welcome;
 
         @FXML
-        void gotoContestPage(ActionEvent event) {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("contest.fxml"));
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                stage.setScene(scene);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+        void contestMouseClick(ActionEvent event) {
+
         }
 
         @FXML
-        void gotoLearningPortal(ActionEvent event) {
+        void learnPortMouesCllick(ActionEvent event) {
 
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("LearningPort.fxml"));
@@ -62,7 +55,7 @@ public class HomePageController {
         }
 
         @FXML
-        void gotoNewsFeed(ActionEvent event) {
+        void newsFeedClick(ActionEvent event) {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("newsFeed.fxml"));
                 Scene scene = new Scene(root);
@@ -75,7 +68,7 @@ public class HomePageController {
         }
 
         @FXML
-        void gotoStudentsPortal(ActionEvent event) {
+        void studentclick(ActionEvent event) {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("Student.fxml"));
                 Scene scene = new Scene(root);
@@ -88,7 +81,7 @@ public class HomePageController {
         }
 
         @FXML
-        void gotoTeachersPortal(ActionEvent event) {
+        void teachersClick(ActionEvent event) {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("Teacher.fxml"));
                 Scene scene = new Scene(root);
