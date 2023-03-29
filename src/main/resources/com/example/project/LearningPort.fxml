@@ -16,7 +16,7 @@
          <children>
             <Pane prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button fx:id="w3School" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoW3school" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: tomato;">
+                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: tomato;">
                      <graphic>
                         <ImageView fitHeight="51.0" fitWidth="58.0">
                            <image>
@@ -34,7 +34,7 @@
             </Pane>
             <Pane layoutX="10.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button fx:id="stackOverFlow" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoStackOF" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: purple;">
+                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: purple;">
                      <graphic>
                         <ImageView fitHeight="60.0" fitWidth="48.0">
                            <image>
@@ -52,7 +52,7 @@
             </Pane>
             <Pane layoutX="155.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button fx:id="cpAlgorithm" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoCPAlgo" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: white;">
+                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: white;">
                      <graphic>
                         <ImageView fitHeight="60.0" fitWidth="72.0">
                            <image>
@@ -70,7 +70,7 @@
             </Pane>
             <Pane layoutX="300.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button fx:id="codeForwin" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoCodeForWin" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Honeydew;">
+                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Honeydew;">
                      <graphic>
                         <ImageView fitHeight="59.0" fitWidth="67.0">
                            <image>
@@ -88,7 +88,7 @@
             </Pane>
             <Pane layoutX="445.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button fx:id="programiz" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoProgramiz" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Azure;">
+                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Azure;">
                      <graphic>
                         <ImageView fitHeight="53.0" fitWidth="81.0">
                            <image>
@@ -106,7 +106,7 @@
             </Pane>
             <Pane layoutX="590.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button fx:id="geekFg" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoGfG" prefHeight="67.0" prefWidth="84.0" style="-fx-background-color: White;">
+                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="84.0" style="-fx-background-color: White;">
                      <graphic>
                         <ImageView fitHeight="46.0" fitWidth="68.0">
                            <image>
