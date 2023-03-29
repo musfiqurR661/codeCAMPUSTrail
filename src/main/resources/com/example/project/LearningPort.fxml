@@ -10,9 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1080.0" style="-fx-background-color: wheat;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1080.0" style="-fx-background-color: wheat;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.LearninPortController">
    <children>
-      <VBox layoutX="27.0" layoutY="18.0" prefHeight="639.0" prefWidth="142.0" style="-fx-background-color: pink;" />
       <HBox alignment="CENTER" layoutX="213.0" layoutY="176.0" prefHeight="115.0" prefWidth="855.0">
          <children>
             <Pane prefHeight="122.0" prefWidth="145.0">
@@ -253,5 +252,15 @@
             </Pane>
          </children>
       </HBox>
+      <Button layoutY="1.0" mnemonicParsing="false" onAction="#gotoHomePage" text="Back" />
+      <VBox layoutY="55.0" prefHeight="619.0" prefWidth="122.0" style="-fx-background-color: pink;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#gotoNewsFeed" prefHeight="114.0" prefWidth="150.0" text="NewsFeed" />
+            <Button mnemonicParsing="false" onAction="#gotoTeachersPortal" prefHeight="127.0" prefWidth="150.0" text="Teacher's " />
+            <Button mnemonicParsing="false" onAction="#gotoStudentsPortal" prefHeight="124.0" prefWidth="150.0" text="Students" />
+            <Button mnemonicParsing="false" onAction="#gotoContestPage" prefHeight="130.0" prefWidth="150.0" text="contest" />
+            <Button mnemonicParsing="false" onAction="#gotoLearningPortal" prefHeight="126.0" prefWidth="150.0" text="Learning Portal" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

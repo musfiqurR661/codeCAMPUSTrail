@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.project.ContestController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="backButtonInContestPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.ContestController">
+   <children>
+      <Button layoutY="1.0" mnemonicParsing="false" onAction="#gotoHomePage" text="Back" />
+      <HBox layoutX="148.0" layoutY="4.0" prefHeight="45.0" prefWidth="931.0">
+         <children>
+            <AnchorPane prefHeight="46.0" prefWidth="626.0" />
+            <AnchorPane prefHeight="30.0" prefWidth="318.0">
+               <children>
+                  <TextField layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="226.0" />
+                  <Button layoutX="252.0" layoutY="14.0" mnemonicParsing="false" text="Search" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <VBox layoutY="50.0" prefHeight="619.0" prefWidth="122.0" style="-fx-background-color: pink;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#gotoNewsFeed" prefHeight="114.0" prefWidth="150.0" text="NewsFeed" />
+            <Button mnemonicParsing="false" onAction="#gotoTeachersPortal" prefHeight="127.0" prefWidth="150.0" text="Teacher's " />
+            <Button mnemonicParsing="false" onAction="#gotoStudentsPortal" prefHeight="124.0" prefWidth="150.0" text="Students" />
+            <Button mnemonicParsing="false" onAction="#gotoContestPage" prefHeight="130.0" prefWidth="150.0" text="contest" />
+            <Button mnemonicParsing="false" onAction="#gotoLearningPortal" prefHeight="126.0" prefWidth="150.0" text="Learning Portal" />
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

@@ -55,7 +55,7 @@ public class SignUpPageController {
     }
     @FXML
     void signUpClicked(ActionEvent event) {
-        String url = "jdbc:mysql://127.0.0.1/musfiq";
+        String url = "jdbc:mysql://127.0.0.1/Noman";
         String username = "root";
         String password = "";
         System.out.println("Connecting database...");
