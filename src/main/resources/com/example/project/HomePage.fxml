@@ -23,11 +23,11 @@
       </AnchorPane>
       <AnchorPane layoutY="275.0" prefHeight="400.0" prefWidth="1080.0" style="-fx-background-color: coral;">
          <children>
-            <Button fx:id="newsFeed" layoutX="98.0" layoutY="134.0" mnemonicParsing="false" onAction="#gotoNewsFeed" prefHeight="174.0" prefWidth="77.0" text="NewsFeed" />
-            <Button fx:id="teachers" layoutX="309.0" layoutY="134.0" mnemonicParsing="false" onAction="#gotoTeachersPortal" prefHeight="174.0" prefWidth="77.0" text="Teacher's " />
-            <Button fx:id="contest" layoutX="686.0" layoutY="134.0" mnemonicParsing="false" onAction="#gotoContestPage" prefHeight="174.0" prefWidth="77.0" text="contest" />
-            <Button fx:id="learPort" layoutX="894.0" layoutY="134.0" mnemonicParsing="false" onAction="#gotoLearningPortal" prefHeight="174.0" prefWidth="77.0" text="Learning Portal" />
-            <Button fx:id="student" layoutX="488.0" layoutY="134.0" mnemonicParsing="false" onAction="#gotoStudentsPortal" prefHeight="174.0" prefWidth="77.0" text="Students" />
+            <Button layoutX="98.0" layoutY="134.0" mnemonicParsing="false" onAction="#gotoNewsFeed" prefHeight="174.0" prefWidth="77.0" text="NewsFeed" />
+            <Button layoutX="309.0" layoutY="134.0" mnemonicParsing="false" onAction="#gotoTeachersPortal" prefHeight="174.0" prefWidth="77.0" text="Teacher's " />
+            <Button layoutX="686.0" layoutY="134.0" mnemonicParsing="false" onAction="#gotoContestPage" prefHeight="174.0" prefWidth="77.0" text="contest" />
+            <Button layoutX="894.0" layoutY="134.0" mnemonicParsing="false" onAction="#gotoLearningPortal" prefHeight="174.0" prefWidth="77.0" text="Learning Portal" />
+            <Button layoutX="488.0" layoutY="134.0" mnemonicParsing="false" onAction="#gotoStudentsPortal" prefHeight="174.0" prefWidth="77.0" text="Students" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

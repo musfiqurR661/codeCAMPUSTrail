@@ -6,18 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="391bc0e2-d93a-4a42-8201-9c3895fe444b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/ContestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/ContestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/LearninPortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/LearninPortController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/NewsFeedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/NewsFeedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/TeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/LearningPort.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/LearningPort.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/Student.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/Student.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/Teacher.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/Teacher.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/contest.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/contest.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/newsFeed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/newsFeed.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/LogInPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/LogInPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +111,10 @@
       <workItem from="1679980526048" duration="4881000" />
       <workItem from="1679985474123" duration="154000" />
       <workItem from="1679986633984" duration="302000" />
-      <workItem from="1680077880685" duration="2361000" />
+      <workItem from="1680077880685" duration="4229000" />
+      <workItem from="1680083803210" duration="167000" />
+      <workItem from="1680084041051" duration="643000" />
+      <workItem from="1680106557837" duration="2390000" />
     </task>
     <servers />
   </component>
