@@ -37,7 +37,14 @@ public class HomePageController {
 
         @FXML
         void contestMouseClick(ActionEvent event) {
-
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("contest.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+                stage.setScene(scene);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
 
         @FXML
