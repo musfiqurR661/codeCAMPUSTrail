@@ -98,6 +98,70 @@ public class HomePageController {
             }
 
         }
+ public static int flag = 0;
+
+    @FXML
+    private Button codeforWin;
+
+    @FXML
+    private Button cpAlgorithm;
+
+    @FXML
+    private Button geekFgeeks;
+
+    @FXML
+    private Button programiz;
+
+    @FXML
+    private Button stackoverFlow;
+
+    @FXML
+    private Button w3School;
+
+    @FXML
+    void gotoCPalgorithm(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gotoCodeforWin(ActionEvent event) {
+
+    }
+
+
+    @FXML
+    void gotoGeekforGeeks(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gotoHomePage(ActionEvent event) {
+
+    }
+
+
+
+
+
+    @FXML
+    void gotoStackoverFlow(ActionEvent event) {
+
+    }
+
+
+
+
+    @FXML
+    void gotoW3school(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gotoprogramiz(ActionEvent event) {
+
+    }
+
+
 
     }
 
