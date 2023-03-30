@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,11 +13,22 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1080.0" style="-fx-background-color: wheat;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.LearninPortController">
    <children>
+      <SplitPane dividerPositions="0.05052005943536404" orientation="VERTICAL" prefHeight="675.0" prefWidth="1080.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="30.0" prefWidth="1080.0" />
+          <AnchorPane layoutY="30.0" minHeight="0.0" minWidth="0.0" prefHeight="645.0" prefWidth="1080.0" />
+        </items>
+      </SplitPane>
+      <ImageView fitHeight="675.0" fitWidth="1080.0">
+         <image>
+            <Image url="@20230330_205529.png" />
+         </image>
+      </ImageView>
       <HBox alignment="CENTER" layoutX="213.0" layoutY="176.0" prefHeight="115.0" prefWidth="855.0">
          <children>
             <Pane prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: tomato;">
+                  <Button fx:id="w3School" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoW3school" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: tomato;">
                      <graphic>
                         <ImageView fitHeight="51.0" fitWidth="58.0">
                            <image>
@@ -34,7 +46,7 @@
             </Pane>
             <Pane layoutX="10.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: purple;">
+                  <Button fx:id="stackoverFlow" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoStackoverFlow" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: purple;">
                      <graphic>
                         <ImageView fitHeight="60.0" fitWidth="48.0">
                            <image>
@@ -52,7 +64,7 @@
             </Pane>
             <Pane layoutX="155.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: white;">
+                  <Button fx:id="cpAlgorithm" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoCPalgorithm" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: white;">
                      <graphic>
                         <ImageView fitHeight="60.0" fitWidth="72.0">
                            <image>
@@ -70,7 +82,7 @@
             </Pane>
             <Pane layoutX="300.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Honeydew;">
+                  <Button fx:id="codeforWin" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoCodeforWin" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Honeydew;">
                      <graphic>
                         <ImageView fitHeight="59.0" fitWidth="67.0">
                            <image>
@@ -88,7 +100,7 @@
             </Pane>
             <Pane layoutX="445.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Azure;">
+                  <Button fx:id="programiz" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoprogramiz" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Azure;">
                      <graphic>
                         <ImageView fitHeight="53.0" fitWidth="81.0">
                            <image>
@@ -106,7 +118,7 @@
             </Pane>
             <Pane layoutX="590.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                <children>
-                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="84.0" style="-fx-background-color: White;">
+                  <Button fx:id="geekFgeeks" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoGeekforGeeks" prefHeight="67.0" prefWidth="84.0" style="-fx-background-color: White;">
                      <graphic>
                         <ImageView fitHeight="46.0" fitWidth="68.0">
                            <image>
@@ -252,7 +264,6 @@
             </Pane>
          </children>
       </HBox>
-      <Button layoutY="1.0" mnemonicParsing="false" onAction="#gotoHomePage" text="Back" />
       <VBox layoutY="55.0" prefHeight="619.0" prefWidth="122.0" style="-fx-background-color: pink;">
          <children>
             <Button mnemonicParsing="false" onAction="#gotoNewsFeed" prefHeight="114.0" prefWidth="150.0" text="NewsFeed" />

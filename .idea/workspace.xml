@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391bc0e2-d93a-4a42-8201-9c3895fe444b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Musfiq" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,10 +118,7 @@
       <workItem from="1679985474123" duration="154000" />
       <workItem from="1679986633984" duration="302000" />
       <workItem from="1680077880685" duration="2361000" />
-      <workItem from="1680164382813" duration="1730000" />
-      <workItem from="1680182223780" duration="507000" />
-      <workItem from="1680182792146" duration="273000" />
-      <workItem from="1680194961157" duration="1372000" />
+
     </task>
     <servers />
   </component>
