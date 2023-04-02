@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Start extends Application {
- // edit again
+
     @Override
     public void start(Stage stage) throws Exception {
        Parent root= FXMLLoader.load(getClass().getResource("LogInPage.fxml"));
@@ -23,4 +23,6 @@ public class Start extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+    public static int counterForMenuOpenClose = 0;
 }
