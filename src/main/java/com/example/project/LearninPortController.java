@@ -3,12 +3,45 @@ package com.example.project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class LearninPortController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LearninPortController implements Initializable {
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        //menuVBoxInLearningPortal.setVisible(false);
+
+        menuVBoxInLearningPortal.setPrefSize(25, 650);
+        AnchorPaneOnVBoxInLearningPortal.setPrefSize(25, 25);
+        menuButtonInLearningPortal.setPrefSize(25, 25);
+        menuButtonInLearningPortal.setLayoutX(0);
+
+        contestButtonInLearningPortal.setPrefSize(25, 125);
+        learningPoralButtonInLearningPortal.setPrefSize(25, 125);
+        newsFeedButtonInLearningPortal.setPrefSize(25, 125);
+        studentsButtonInLearningPortal.setPrefSize(25, 125);
+        teacherButtonInLearningPortal.setPrefSize(25, 125);
+
+        resizableAnchorPaneInLearningPortal.setPrefSize(1055, 650);
+        resizableAnchorPaneInLearningPortal.setLayoutX(25);
+        resizableAnchorPaneInLearningPortalonAnotherPane.setPrefSize(1055, 165);
+        resizableAnchorPaneInLearningPortalonAnotherPane.setLayoutX(25);
+        hBox1InLearningPortal.setLayoutX(115);
+        hBox2InLearningPortal.setLayoutX(115);
+        hBox3InLearningPortal.setLayoutX(115);
+    }
     @FXML
     void gotoHomePage(ActionEvent event) {
         try {
@@ -88,4 +121,135 @@ public class LearninPortController {
 
     }
 
+
+    ////** Learning portal all webview action event**////
+
+    public static int flag = 0;
+    @FXML
+    void gotoCPAlgorithm(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gotoCodeforwin(ActionEvent event) {
+
+    }
+    @FXML
+    void gotoGeekForGeeks(ActionEvent event) {
+
+    }
+    @FXML
+    void gotoStackOverflow(ActionEvent event) {
+
+    }
+    @FXML
+    void gotoW3school(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gotoProgramiz(ActionEvent event) {
+
+    }
+
+    ////**--------------------------------------------------------------------------------------**////
+
+
+    ////** FxId for menu open and close **////
+
+    @FXML
+    private HBox hBox1InLearningPortal;
+
+    @FXML
+    private HBox hBox2InLearningPortal;
+
+    @FXML
+    private HBox hBox3InLearningPortal;
+
+    @FXML
+    private VBox menuVBoxInLearningPortal;
+
+    @FXML
+    private AnchorPane resizableAnchorPaneInLearningPortal;
+
+    @FXML
+    private AnchorPane resizableAnchorPaneInLearningPortalonAnotherPane;
+
+    @FXML
+    private AnchorPane AnchorPaneOnVBoxInLearningPortal;
+    @FXML
+    private Button contestButtonInLearningPortal;
+    @FXML
+    private Button learningPoralButtonInLearningPortal;
+
+    @FXML
+    private Button menuButtonInLearningPortal;
+    @FXML
+    private Button newsFeedButtonInLearningPortal;
+    @FXML
+    private Button studentsButtonInLearningPortal;
+
+    @FXML
+    private Button teacherButtonInLearningPortal;
+
+    ////**-------------------------------------------------------------------------------------------**////
+
+
+    ////** Action event for menu open and close **////
+
+
+    @FXML
+    void menuOpenCloseEvent(ActionEvent event) {
+
+        // Already close, work for open
+
+        if(Start.counterForMenuOpenClose == 0) {
+            menuVBoxInLearningPortal.setPrefSize(115, 650);
+            AnchorPaneOnVBoxInLearningPortal.setPrefSize(115, 25);
+            menuButtonInLearningPortal.setPrefSize(46.5, 25);
+            menuButtonInLearningPortal.setLayoutX(68.5);
+
+
+            contestButtonInLearningPortal.setPrefSize(115, 125);
+            learningPoralButtonInLearningPortal.setPrefSize(115, 125);
+            newsFeedButtonInLearningPortal.setPrefSize(115, 125);
+            studentsButtonInLearningPortal.setPrefSize(115, 125);
+            teacherButtonInLearningPortal.setPrefSize(115, 125);
+
+            resizableAnchorPaneInLearningPortal.setPrefSize(965, 650);
+            resizableAnchorPaneInLearningPortal.setLayoutX(115);
+            resizableAnchorPaneInLearningPortalonAnotherPane.setPrefSize(965, 165);
+            resizableAnchorPaneInLearningPortalonAnotherPane.setLayoutX(115);
+            hBox1InLearningPortal.setLayoutX(55);
+            hBox2InLearningPortal.setLayoutX(55);
+            hBox3InLearningPortal.setLayoutX(55);
+
+            Start.counterForMenuOpenClose = 1;
+        }
+        // Already open, work for close
+        else if (Start.counterForMenuOpenClose == 1) {
+            menuVBoxInLearningPortal.setPrefSize(25, 650);
+            AnchorPaneOnVBoxInLearningPortal.setPrefSize(25, 25);
+            menuButtonInLearningPortal.setPrefSize(25, 25);
+            menuButtonInLearningPortal.setLayoutX(0);
+
+            contestButtonInLearningPortal.setPrefSize(25, 125);
+            learningPoralButtonInLearningPortal.setPrefSize(25, 125);
+            newsFeedButtonInLearningPortal.setPrefSize(25, 125);
+            studentsButtonInLearningPortal.setPrefSize(25, 125);
+            teacherButtonInLearningPortal.setPrefSize(25, 125);
+
+            resizableAnchorPaneInLearningPortal.setPrefSize(1055, 650);
+            resizableAnchorPaneInLearningPortal.setLayoutX(25);
+            resizableAnchorPaneInLearningPortalonAnotherPane.setPrefSize(1055, 165);
+            resizableAnchorPaneInLearningPortalonAnotherPane.setLayoutX(25);
+            hBox1InLearningPortal.setLayoutX(115);
+            hBox2InLearningPortal.setLayoutX(115);
+            hBox3InLearningPortal.setLayoutX(115);
+
+            Start.counterForMenuOpenClose = 0;
+        }
+    }
+
 }
+
