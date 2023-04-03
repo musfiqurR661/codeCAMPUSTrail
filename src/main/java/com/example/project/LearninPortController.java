@@ -14,6 +14,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -125,32 +126,61 @@ public class LearninPortController implements Initializable {
     ////** Learning portal all webview action event**////
 
     public static int flag = 0;
+
+
+
+
+
     @FXML
-    void gotoCPAlgorithm(ActionEvent event) {
+    void gotoW3school(ActionEvent event) throws IOException {
+        flag = 1;
+        clickEvent(event);
+
+    }
+    @FXML
+    void gotoStackOverflow(ActionEvent event) throws IOException {
+        flag = 2;
+        clickEvent(event);
+    }
+
+    @FXML
+    void gotoCPAlgorithm(ActionEvent event) throws IOException {
+
+        flag = 3;
+        clickEvent(event);
 
     }
 
     @FXML
-    void gotoCodeforwin(ActionEvent event) {
-
-    }
-    @FXML
-    void gotoGeekForGeeks(ActionEvent event) {
-
-    }
-    @FXML
-    void gotoStackOverflow(ActionEvent event) {
-
-    }
-    @FXML
-    void gotoW3school(ActionEvent event) {
+    void gotoCodeforwin(ActionEvent event) throws IOException {
+        flag = 4;
+        clickEvent(event);
 
     }
 
     @FXML
-    void gotoProgramiz(ActionEvent event) {
+    void gotoProgramiz(ActionEvent event) throws IOException {
+        flag = 5;
+        clickEvent(event);
 
     }
+
+    @FXML
+    void gotoGeekForGeeks(ActionEvent event) throws IOException {
+        flag = 6;
+        clickEvent(event);
+
+    }
+    private Parent root;
+    private Stage stage;
+    private Scene scene;
+    void clickEvent(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("webview.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+    }
+
 
     ////**--------------------------------------------------------------------------------------**////
 
@@ -250,6 +280,12 @@ public class LearninPortController implements Initializable {
             Start.counterForMenuOpenClose = 0;
         }
     }
+
+    //method for website
+
+
+
+
 
 }
 
