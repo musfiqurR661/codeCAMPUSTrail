@@ -14,9 +14,15 @@ public class Start extends Application {
        Scene scene=new Scene(root);
        stage.setScene(scene);
        stage.show();
-    }
+       //System.out.println("MARA");
+       //ar na bhai..
 
+       //partasina keno
+
+    }
     public static void main(String[] args) {
         launch(args);
     }
+
+    public static int counterForMenuOpenClose = 0;
 }
