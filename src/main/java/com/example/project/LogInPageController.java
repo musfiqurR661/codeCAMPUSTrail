@@ -3,6 +3,8 @@
 package com.example.project;
 
         import javafx.event.ActionEvent;
+        import javafx.event.Event;
+        import javafx.event.EventHandler;
         import javafx.fxml.FXML;
         import javafx.fxml.FXMLLoader;
         import javafx.scene.Node;
@@ -12,6 +14,9 @@ package com.example.project;
         import javafx.scene.control.Button;
         import javafx.scene.control.PasswordField;
         import javafx.scene.control.TextField;
+        import javafx.scene.input.KeyCode;
+        import javafx.scene.input.KeyEvent;
+        import javafx.scene.input.MouseEvent;
         import javafx.stage.Stage;
 
         import java.sql.*;
@@ -39,9 +44,30 @@ public class LogInPageController {
         }
     }
 
-
+    ////** Action event for going to home page from login page---------------------------------**////
     @FXML
-    void loginClicked(ActionEvent event) {
+    void loginClickedByMouseClicked(MouseEvent event) {
+        loginEventMethod(event);
+    }
+    @FXML
+    void loginClickedByEnterKeyInPasswordeField(KeyEvent event) {
+        passwordbox.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                loginEventMethod(e);
+            }
+        });
+    }
+    @FXML
+    void loginClickedByEnterKeyInUsernameField(KeyEvent event) {
+        inputbox.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                loginEventMethod(e);
+            }
+        });
+    }
+
+    // Method for going to home page from login page
+    void loginEventMethod(Event event) {
         String input=inputbox.getText();
         String pas=passwordbox.getText();
 
@@ -49,7 +75,7 @@ public class LogInPageController {
         System.out.println(pas);
 
 
-        String url = "jdbc:mysql://127.0.0.1/musfiq";
+        String url = "jdbc:mysql://127.0.0.1/Noman";
         String username = "root";
         String password = "";
         System.out.println("Connecting database...");
@@ -94,7 +120,7 @@ public class LogInPageController {
                     alert.showAndWait();
                 }
             }
-           else if (rs2.next()) {
+            else if (rs2.next()) {
                 String pass = rs2.getString("password");
                 if (pas.equals(pass)) {
                     try {
@@ -127,6 +153,6 @@ public class LogInPageController {
             System.out.println(e.getMessage());
         }
     }
-
+    ////**----------------------------------------------------------------------------------------------------**////
 
 }
