@@ -39,37 +39,37 @@ public class WebView implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        System.out.println(LearninPortController.flag);
-        if(LearninPortController.flag==1) {
+        System.out.println(LearninPortController.webviewControlCounter);
+        if(LearninPortController.webviewControlCounter ==1) {
             WebEngine webEngine = webpage.getEngine();
             webEngine.load("https://www.w3schools.com/");
         }
 
-        else if(LearninPortController.flag==2) {
+        else if(LearninPortController.webviewControlCounter ==2) {
             WebEngine webEngine = webpage.getEngine();
             webEngine.load("https://stackoverflow.com/");
         }
-        else if(LearninPortController.flag==3) {
+        else if(LearninPortController.webviewControlCounter ==3) {
             WebEngine webEngine = webpage.getEngine();
             webEngine.load("https://cp-algorithms.com/");
         }
-        else if(LearninPortController.flag==4) {
+        else if(LearninPortController.webviewControlCounter ==4) {
             WebEngine webEngine = webpage.getEngine();
             webEngine.load("https://codeforwin.org/");
         }
-        else if(LearninPortController.flag==5) {
+        else if(LearninPortController.webviewControlCounter ==5) {
             WebEngine webEngine = webpage.getEngine();
             webEngine.load("https://www.programiz.com/");
         }
-        else if(LearninPortController.flag==6) {
+        else if(LearninPortController.webviewControlCounter ==6) {
             WebEngine webEngine = webpage.getEngine();
             webEngine.load("https://www.geeksforgeeks.org/");
         }
-        else if(LearninPortController.flag==7) {
+        else if(LearninPortController.webviewControlCounter ==7) {
             WebEngine webEngine = webpage.getEngine();
             webEngine.load("https://www.github.com");
         }
-        else if(LearninPortController.flag==8) {
+        else if(LearninPortController.webviewControlCounter ==8) {
             WebEngine webEngine = webpage.getEngine();
             webEngine.load("https://www.github.com");
         }
