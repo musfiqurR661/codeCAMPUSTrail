@@ -79,9 +79,6 @@ public class SignUpPageController {
                 con = DriverManager.getConnection(url, username, password);
 
 
-
-
-
                 pst = con.prepareStatement("INSERT INTO useraccounts(fullName,email,username,password) VALUES(?,?,?,?)");
                 pst.setString(1,user_Fullname);
                 pst.setString(2,user_email);
