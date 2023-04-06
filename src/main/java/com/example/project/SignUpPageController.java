@@ -55,7 +55,7 @@ public class SignUpPageController {
     }
     @FXML
     void signUpClicked(ActionEvent event) {
-        String url = "jdbc:mysql://127.0.0.1/musfiq";
+        String url = "jdbc:mysql://127.0.0.1/Noman";
         String username = "root";
         String password = "";
         System.out.println("Connecting database...");
@@ -77,9 +77,6 @@ public class SignUpPageController {
         if(user_Fullname!=null && user_email!=null && User_username!=null  && user_password.equals(c_Password)){
             try {
                 con = DriverManager.getConnection(url, username, password);
-
-
-
 
 
                 pst = con.prepareStatement("INSERT INTO useraccounts(fullName,email,username,password) VALUES(?,?,?,?)");

@@ -10,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -125,49 +124,45 @@ public class LearninPortController implements Initializable {
 
     ////** Learning portal all webview action event**////
 
-    public static int flag = 0;
-
-
-
-
+    public static int webviewControlCounter = 0;
 
     @FXML
     void gotoW3school(ActionEvent event) throws IOException {
-        flag = 1;
+        webviewControlCounter = 1;
         clickEvent(event);
 
     }
     @FXML
     void gotoStackOverflow(ActionEvent event) throws IOException {
-        flag = 2;
+        webviewControlCounter = 2;
         clickEvent(event);
     }
 
     @FXML
     void gotoCPAlgorithm(ActionEvent event) throws IOException {
 
-        flag = 3;
+        webviewControlCounter = 3;
         clickEvent(event);
 
     }
 
     @FXML
     void gotoCodeforwin(ActionEvent event) throws IOException {
-        flag = 4;
+        webviewControlCounter = 4;
         clickEvent(event);
 
     }
 
     @FXML
     void gotoProgramiz(ActionEvent event) throws IOException {
-        flag = 5;
+        webviewControlCounter = 5;
         clickEvent(event);
 
     }
 
     @FXML
     void gotoGeekForGeeks(ActionEvent event) throws IOException {
-        flag = 6;
+        webviewControlCounter = 6;
         clickEvent(event);
 
     }
