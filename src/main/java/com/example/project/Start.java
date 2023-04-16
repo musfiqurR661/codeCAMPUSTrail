@@ -6,6 +6,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Start extends Application {
@@ -13,6 +14,8 @@ public class Start extends Application {
     @Override
     public void start(Stage stage) throws Exception {
        Parent root= FXMLLoader.load(getClass().getResource("LogInPage.fxml"));
+       stage.setTitle("codeCampus");
+       Image image = new Image("logo1.png");
        Scene scene=new Scene(root);
        stage.setScene(scene);
 
