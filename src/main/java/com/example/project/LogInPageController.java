@@ -4,7 +4,6 @@ package com.example.project;
 
         import javafx.event.ActionEvent;
         import javafx.event.Event;
-        import javafx.event.EventHandler;
         import javafx.fxml.FXML;
         import javafx.fxml.FXMLLoader;
         import javafx.scene.Node;
@@ -20,6 +19,8 @@ package com.example.project;
         import javafx.stage.Stage;
 
         import java.sql.*;
+
+        import static com.example.project.Start.*;
 
 public class LogInPageController {
 
@@ -73,15 +74,16 @@ public class LogInPageController {
 
         System.out.println(input);
         System.out.println(pas);
+        currentUserUsername = input;
 
-
-        String url = "jdbc:mysql://127.0.0.1/musfiq";
+        String url = "jdbc:mysql://127.0.0.1/Noman";
         String username = "root";
         String password = "";
         System.out.println("Connecting database...");
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Database connected!");
+
         } catch (SQLException e) {
             throw new IllegalStateException("Cannot connect the database!", e);
         }

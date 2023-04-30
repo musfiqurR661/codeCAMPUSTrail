@@ -1,13 +1,13 @@
 package com.example.project;
 
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class Start extends Application {
 
@@ -45,5 +45,12 @@ public class Start extends Application {
         launch(args);
     }
 
+
+    //**** ............ All static variable ........................***///
+    public static String currentUserName;
+    public static String currentUserUsername;
+    public static String currentUserType;
     public static int counterForMenuOpenClose = 0;
+    public static ArrayList<String> allPost = new ArrayList<>();
+    //**** ............ ...................... ........................***///
 }
