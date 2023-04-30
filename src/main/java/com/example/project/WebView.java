@@ -32,6 +32,7 @@ public class WebView implements Initializable{
 
 
 
+
     ////** Learning portal all webview action event handle**////
 
     @FXML
@@ -73,9 +74,17 @@ public class WebView implements Initializable{
             WebEngine webEngine = webpage.getEngine();
             webEngine.load("https://www.github.com");
         }
-
-
+        if(ContestController.ContestControllerCounter==1){
+            WebEngine webEngine = webpage.getEngine();
+            webEngine.load("https://www.codeforces.com");
+        }
+        else if (ContestController.ContestControllerCounter==2) {
+            WebEngine webEngine = webpage.getEngine();
+            webEngine.load(("https://www.codechef.com"));
+        }
+        else if (ContestController.ContestControllerCounter==3) {
+            WebEngine webEngine = webpage.getEngine();
+            webEngine.load(("https://vjudge.net/"));
+        }
     }
-
-
 }
