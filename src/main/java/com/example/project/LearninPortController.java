@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LearninPortController implements Initializable {
@@ -169,6 +170,14 @@ public class LearninPortController implements Initializable {
     private Parent root;
     private Stage stage;
     private Scene scene;
+    public void nextScene(ActionEvent e) throws IOException {
+        root=FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NextScene.fxml")));
+        scene=new Scene(root);
+        stage=(Stage)((Node) e.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+
+    }
     void clickEvent(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("webview.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
