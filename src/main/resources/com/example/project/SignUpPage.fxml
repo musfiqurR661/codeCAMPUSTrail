@@ -38,8 +38,8 @@
             <Button fx:id="loginButtonInSignUpPage" layoutX="248.0" layoutY="400.0" mnemonicParsing="false" onAction="#goToLoginPage" prefHeight="25.0" prefWidth="58.0" text="Login" />
             <Label layoutX="100.0" layoutY="400.0" prefHeight="25.0" text="Already have an account?" />
             <Button fx:id="signUp" layoutX="185.0" layoutY="316.0" mnemonicParsing="false" onAction="#signUpClicked" prefHeight="25.0" prefWidth="80.0" text="Sign Up" />
-            <RadioButton layoutX="118.0" layoutY="269.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="80.0" text="Teacher" />
-            <RadioButton layoutX="225.0" layoutY="269.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="80.0" text="Student" />
+            <RadioButton fx:id="teachersRadioButton" layoutX="118.0" layoutY="269.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="80.0" text="Teacher" />
+            <RadioButton fx:id="studentsRadioButton" layoutX="225.0" layoutY="269.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="80.0" text="Student" />
          </children>
       </AnchorPane>
    </children>
