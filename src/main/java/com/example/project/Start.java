@@ -15,7 +15,7 @@ public class Start extends Application {
     public void start(Stage stage) throws Exception {
        Parent root= FXMLLoader.load(getClass().getResource("LogInPage.fxml"));
        stage.setTitle("codeCampus");
-       Image image = new Image("logo1.png");
+       Image image = new Image("G:\\codeCAMPUSTrail\\src\\logo.png");
        Scene scene=new Scene(root);
        stage.setScene(scene);
 
