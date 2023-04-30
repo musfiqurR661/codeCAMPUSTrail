@@ -12,7 +12,10 @@ import javafx.stage.Stage;
 import java.sql.*;
 import java.util.Objects;
 
+
 public class SignUpPageController {
+
+
     @FXML
     private PasswordField cpasswordbox;
 
@@ -65,7 +68,7 @@ public class SignUpPageController {
 
     @FXML
     void signUpClicked(ActionEvent event) {
-        String url = "jdbc:mysql://127.0.0.1/musfiq";
+        String url = "jdbc:mysql://127.0.0.1/Noman";
         String username = "root";
         String password = "";
         System.out.println("Connecting database...");

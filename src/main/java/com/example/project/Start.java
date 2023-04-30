@@ -1,8 +1,6 @@
 package com.example.project;
 
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -46,6 +44,7 @@ public class Start extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 
     //**** ............ All static variable ........................***///
     public static String currentUserName;
