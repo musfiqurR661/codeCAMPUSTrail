@@ -1,0 +1,154 @@
+Index: src/main/java/com/example/project/LogInPageController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n\npackage com.example.project;\n\n        import javafx.event.ActionEvent;\n        import javafx.event.Event;\n        import javafx.event.EventHandler;\n        import javafx.fxml.FXML;\n        import javafx.fxml.FXMLLoader;\n        import javafx.scene.Node;\n        import javafx.scene.Parent;\n        import javafx.scene.Scene;\n        import javafx.scene.control.Alert;\n        import javafx.scene.control.Button;\n        import javafx.scene.control.PasswordField;\n        import javafx.scene.control.TextField;\n        import javafx.scene.input.KeyCode;\n        import javafx.scene.input.KeyEvent;\n        import javafx.scene.input.MouseEvent;\n        import javafx.stage.Stage;\n\n        import java.sql.*;\n\npublic class LogInPageController {\n\n    @FXML\n    private TextField inputbox;\n\n    @FXML\n    private Button login;\n\n    @FXML\n    private PasswordField passwordbox;\n\n    @FXML\n    void goToSignUpPage(ActionEvent event) {\n        try {\n            Parent root = FXMLLoader.load(getClass().getResource(\"SignUpPage.fxml\"));\n            Scene scene = new Scene(root);\n            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();\n            stage.setScene(scene);\n        } catch (Exception e) {\n            throw new RuntimeException(e);\n        }\n    }\n\n    ////** Action event for going to home page from login page---------------------------------**////\n    @FXML\n    void loginClickedByMouseClicked(MouseEvent event) {\n        loginEventMethod(event);\n    }\n    @FXML\n    void loginClickedByEnterKeyInPasswordeField(KeyEvent event) {\n        passwordbox.setOnKeyPressed(e -> {\n            if (e.getCode() == KeyCode.ENTER) {\n                loginEventMethod(e);\n            }\n        });\n    }\n    @FXML\n    void loginClickedByEnterKeyInUsernameField(KeyEvent event) {\n        inputbox.setOnKeyPressed(e -> {\n            if (e.getCode() == KeyCode.ENTER) {\n                loginEventMethod(e);\n            }\n        });\n    }\n\n    // Method for going to home page from login page\n    void loginEventMethod(Event event) {\n        String input=inputbox.getText();\n        String pas=passwordbox.getText();\n\n        System.out.println(input);\n        System.out.println(pas);\n\n\n        String url = \"jdbc:mysql://127.0.0.1/musfiq\";\n        String username = \"root\";\n        String password = \"\";\n        System.out.println(\"Connecting database...\");\n\n        try (Connection connection = DriverManager.getConnection(url, username, password)) {\n            System.out.println(\"Database connected!\");\n        } catch (SQLException e) {\n            throw new IllegalStateException(\"Cannot connect the database!\", e);\n        }\n\n        try {\n            String chk1 = \"Select * from useraccounts where email=?\";\n            String chk2 = \"Select * from useraccounts where username=?\";\n            Connection con;\n            PreparedStatement pst1, pst2;\n            con = DriverManager.getConnection(url, username, password);\n            pst1 = con.prepareStatement(chk1);\n            pst2 = con.prepareStatement(chk2);\n            pst1.setString(1, input);\n            pst2.setString(1,input);\n            ResultSet rs1;\n            ResultSet rs2;\n            rs1 = pst1.executeQuery();\n            rs2 = pst2.executeQuery();\n            if (rs1.next()) {\n                String pass = rs1.getString(\"password\");\n                if (pas.equals(pass)) {\n                    try {\n                        Parent root = FXMLLoader.load((getClass().getResource(\"HomePage.fxml\")));\n                        Scene scene = new Scene(root);\n                        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();\n                        stage.setScene(scene);\n                    }catch (Exception e) {\n                        throw new RuntimeException(e);\n                    }\n                }\n                else {\n                    Alert alert = new Alert(Alert.AlertType.ERROR);\n                    alert.setTitle(\"Error\");\n                    alert.setHeaderText(\"Wrong password\");\n                    alert.setContentText(\"Please enter your password correctly!\");\n                    alert.showAndWait();\n                }\n            }\n            else if (rs2.next()) {\n                String pass = rs2.getString(\"password\");\n                if (pas.equals(pass)) {\n                    try {\n                        Parent root = FXMLLoader.load((getClass().getResource(\"HomePage.fxml\")));\n                        Scene scene = new Scene(root);\n                        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();\n                        stage.setScene(scene);\n                    }catch (Exception e) {\n                        throw new RuntimeException(e);\n                    }\n                }\n                else {\n                    Alert alert = new Alert(Alert.AlertType.ERROR);\n                    alert.setTitle(\"Error\");\n                    alert.setHeaderText(\"Wrong password\");\n                    alert.setContentText(\"Please enter your password correctly!\");\n                    alert.showAndWait();\n                }\n            }\n            else {\n                Alert alert = new Alert(Alert.AlertType.ERROR);\n                alert.setTitle(\"Error\");\n                alert.setHeaderText(\"Wrong email/password\");\n                alert.setContentText(\"Please enter your email and password correctly!\");\n                alert.showAndWait();\n            }\n\n\n        } catch (Exception e) {\n            System.out.println(e.getMessage());\n        }\n    }\n    ////**----------------------------------------------------------------------------------------------------**////\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/project/LogInPageController.java b/src/main/java/com/example/project/LogInPageController.java
+--- a/src/main/java/com/example/project/LogInPageController.java	(revision c4f9339a3541362d6825ecbe06269312f3ee7f8a)
++++ b/src/main/java/com/example/project/LogInPageController.java	(date 1682855021407)
+@@ -75,7 +75,7 @@
+         System.out.println(pas);
+ 
+ 
+-        String url = "jdbc:mysql://127.0.0.1/musfiq";
++        String url = "jdbc:mysql://127.0.0.1/Noman";
+         String username = "root";
+         String password = "";
+         System.out.println("Connecting database...");
+Index: src/main/java/com/example/project/SignUpPageController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.project;\n\nimport javafx.event.ActionEvent;\nimport javafx.fxml.FXML;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Node;\nimport javafx.scene.Parent;\nimport javafx.scene.Scene;\nimport javafx.scene.control.Alert;\nimport javafx.scene.control.Button;\nimport javafx.scene.control.PasswordField;\nimport javafx.scene.input.MouseEvent;\nimport javafx.stage.Stage;\n\nimport java.sql.*;\nimport java.util.Objects;\nimport javafx.event.ActionEvent;\nimport javafx.fxml.FXML;\nimport javafx.scene.control.Button;\nimport javafx.scene.control.PasswordField;\nimport javafx.scene.control.TextField;\n\npublic class SignUpPageController {\n    @FXML\n    private PasswordField cpasswordbox;\n\n    @FXML\n    private TextField emailbox;\n\n    @FXML\n    private Button loginButtonInSignUpPage;\n\n    @FXML\n    private TextField namebox;\n\n    @FXML\n    private PasswordField passwordbox;\n\n    @FXML\n    private Button signUp;\n\n    @FXML\n    private TextField usernamebox;\n\n    @FXML\n    void goToLoginPage(ActionEvent event) throws Exception {\n        try {\n            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(\"LogInPage.fxml\")));\n            Scene scene = new Scene(root);\n            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();\n            stage.setScene(scene);\n        }catch (Exception e) {\n            throw new RuntimeException(e);\n        }\n    }\n    @FXML\n    void signUpClicked(ActionEvent event) {\n        String url = \"jdbc:mysql://127.0.0.1/musfiq\";\n        String username = \"root\";\n        String password = \"\";\n        System.out.println(\"Connecting database...\");\n        try (Connection connection = DriverManager.getConnection(url, username, password)) {\n            System.out.println(\"Database connected!\");\n        } catch (SQLException e) {\n            throw new IllegalStateException(\"Cannot connect the database!\", e);\n        }\n        Connection con;\n        PreparedStatement pst;\n\n        String user_Fullname=namebox.getText();\n        String user_email = emailbox.getText();\n        String User_username=usernamebox.getText();\n        String user_password = passwordbox.getText();\n        String c_Password=cpasswordbox.getText();\n\n\n        if(user_Fullname!=null && user_email!=null && User_username!=null  && user_password.equals(c_Password)){\n            try {\n                con = DriverManager.getConnection(url, username, password);\n\n\n                pst = con.prepareStatement(\"INSERT INTO useraccounts(fullName,email,username,password) VALUES(?,?,?,?)\");\n                pst.setString(1,user_Fullname);\n                pst.setString(2,user_email);\n                pst.setString(3,User_username);\n                pst.setString(4,user_password);\n                pst.execute();\n\n                System.out.println(\"Insert successful\");\n\n                Alert alert = new Alert(Alert.AlertType.INFORMATION);\n                alert.setTitle(\"Welcome\");\n                alert.setHeaderText(\"Login Successful\");\n                alert.setContentText(\"Sign up Successful\");\n                alert.showAndWait();\n\n\n            } catch (Exception e) {\n                e.getStackTrace();\n            }\n        }else {\n            Alert alert=new Alert(Alert.AlertType.ERROR);\n            alert.setHeaderText(\"Please enter all data correctly\");\n            alert.showAndWait();\n        }\n\n    }\n\n//    @FXML\n//    void mouseHoverLogin(MouseEvent event) {\n//        loginButtonInSignUpPage.setText(\"--\");\n//    }\n//\n//    @FXML\n//    void mouseReleasedLogin(MouseEvent event) {\n//        loginButtonInSignUpPage.setText(\"Login\");\n//    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/project/SignUpPageController.java b/src/main/java/com/example/project/SignUpPageController.java
+--- a/src/main/java/com/example/project/SignUpPageController.java	(revision c4f9339a3541362d6825ecbe06269312f3ee7f8a)
++++ b/src/main/java/com/example/project/SignUpPageController.java	(date 1682855021435)
+@@ -55,7 +55,7 @@
+     }
+     @FXML
+     void signUpClicked(ActionEvent event) {
+-        String url = "jdbc:mysql://127.0.0.1/musfiq";
++        String url = "jdbc:mysql://127.0.0.1/Noman";
+         String username = "root";
+         String password = "";
+         System.out.println("Connecting database...");
+Index: src/main/java/module-info.java
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+deleted file mode 100644
+--- a/src/main/java/module-info.java	(revision c4f9339a3541362d6825ecbe06269312f3ee7f8a)
++++ /dev/null	(revision c4f9339a3541362d6825ecbe06269312f3ee7f8a)
+@@ -1,10 +0,0 @@
+-module com.example.project {
+-    requires javafx.controls;
+-    requires javafx.fxml;
+-    requires java.sql;
+-    requires javafx.web;
+-
+-
+-    opens com.example.project to javafx.fxml;
+-    exports com.example.project;
+-}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"391bc0e2-d93a-4a42-8201-9c3895fe444b\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/project/SignUpPageController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/project/SignUpPageController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"FxmlFile\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java\" root0=\"SKIP_INSPECTION\" />\n    <setting file=\"file://$PROJECT_DIR$/src/main/resources/com/example/project/LearningPort.fxml\" root0=\"SKIP_INSPECTION\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"useMavenConfig\" value=\"true\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"2MeJflixUaVHJDtar1Bn2OTmXCa\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"git-widget-placeholder\": \"Musfiq\",\n    \"ignore.virus.scanning.warn.message\": \"true\",\n    \"last_opened_file_path\": \"F:/ProjectAOOP/codeCAMPUSTrail/src/main/resources/com/example/project\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"project.structure.last.edited\": \"Libraries\",\n    \"project.structure.proportion\": \"0.15\",\n    \"project.structure.side.proportion\": \"0.2\",\n    \"settings.editor.selected.configurable\": \"preferences.JavaFX\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"F:\\ProjectAOOP\\codeCAMPUSTrail\\src\\main\\resources\\com\\example\\project\" />\n      <recent name=\"F:\\ProjectAOOP\\codeCAMPUSTrail\\src\\main\\resources\" />\n      <recent name=\"F:\\ProjectAOOP\\codeCAMPUSTrail\\src\\main\\java\\com\\example\\project\" />\n      <recent name=\"C:\\Users\\rvivy\\OneDrive\\Documents\\Project[1]\\Project\\src\\main\\resources\\com\\example\\project\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"G:\\Project\\codeCAMPUS\\src\\main\\resources\\com\\example\\project\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.Start\">\n    <configuration name=\"AutoTypingText\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.project.AutoTypingText\" />\n      <module name=\"Project\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.example.project.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Start\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.project.Start\" />\n      <module name=\"Project\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.example.project.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Start\" />\n        <item itemvalue=\"Application.AutoTypingText\" />\n        <item itemvalue=\"Application.Start\" />\n        <item itemvalue=\"Application.Start\" />\n        <item itemvalue=\"Application.Start\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"391bc0e2-d93a-4a42-8201-9c3895fe444b\" name=\"Changes\" comment=\"\" />\n      <created>1678122220365</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1678122220365</updated>\n      <workItem from=\"1678122221547\" duration=\"1107000\" />\n      <workItem from=\"1678123356640\" duration=\"2632000\" />\n      <workItem from=\"1678126017469\" duration=\"17000\" />\n      <workItem from=\"1678126254013\" duration=\"4542000\" />\n      <workItem from=\"1679250882082\" duration=\"1595000\" />\n      <workItem from=\"1679321545856\" duration=\"33000\" />\n      <workItem from=\"1679321584973\" duration=\"9539000\" />\n      <workItem from=\"1679910110917\" duration=\"1490000\" />\n      <workItem from=\"1679914057295\" duration=\"255000\" />\n      <workItem from=\"1679935955973\" duration=\"5364000\" />\n      <workItem from=\"1679980526048\" duration=\"4881000\" />\n      <workItem from=\"1679985474123\" duration=\"154000\" />\n      <workItem from=\"1679986633984\" duration=\"302000\" />\n      <workItem from=\"1680077880685\" duration=\"2361000\" />\n      <workItem from=\"1680464946862\" duration=\"964000\" />\n      <workItem from=\"1680517768431\" duration=\"4466000\" />\n      <workItem from=\"1680678000802\" duration=\"5680000\" />\n      <workItem from=\"1680685657132\" duration=\"2157000\" />\n      <workItem from=\"1680687937547\" duration=\"1844000\" />\n      <workItem from=\"1680709465687\" duration=\"6180000\" />\n      <workItem from=\"1680718844751\" duration=\"114000\" />\n      <workItem from=\"1681668283016\" duration=\"2969000\" />\n      <workItem from=\"1681731401966\" duration=\"10000\" />\n      <workItem from=\"1681748407430\" duration=\"3783000\" />\n      <workItem from=\"1681759254240\" duration=\"6792000\" />\n      <workItem from=\"1681879173801\" duration=\"10319000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/Musfiq\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/codeCAMPUS$Start.ic\" NAME=\"Start Coverage Results\" MODIFIED=\"1679321554645\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\n      <FILTER>com.example.project.*</FILTER>\n    </SUITE>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c4f9339a3541362d6825ecbe06269312f3ee7f8a)
++++ b/.idea/workspace.xml	(date 1682856764656)
+@@ -6,10 +6,9 @@
+   <component name="ChangeListManager">
+     <list default="true" id="391bc0e2-d93a-4a42-8201-9c3895fe444b" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/SignUpPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/SignUpPageController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -54,26 +53,26 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "Musfiq",
+-    "ignore.virus.scanning.warn.message": "true",
+-    "last_opened_file_path": "F:/ProjectAOOP/codeCAMPUSTrail/src/main/resources/com/example/project",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Libraries",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "preferences.JavaFX",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;Noman&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/4th Semester/AOOP Lab/AOOP Project/codeCAMPUSTrail&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="F:\ProjectAOOP\codeCAMPUSTrail\src\main\resources\com\example\project" />
+@@ -101,7 +100,7 @@
+     </configuration>
+     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="com.example.project.Start" />
+-      <module name="Project" />
++      <module name="codeCAMPUSTrail" />
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="com.example.project.*" />
+@@ -118,7 +117,7 @@
+         <item itemvalue="Application.AutoTypingText" />
+         <item itemvalue="Application.Start" />
+         <item itemvalue="Application.Start" />
+-        <item itemvalue="Application.Start" />
++        <item itemvalue="Application.AutoTypingText" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -156,6 +155,11 @@
+       <workItem from="1681748407430" duration="3783000" />
+       <workItem from="1681759254240" duration="6792000" />
+       <workItem from="1681879173801" duration="10319000" />
++      <workItem from="1682782337731" duration="4725000" />
++      <workItem from="1682790793741" duration="139000" />
++      <workItem from="1682825105267" duration="394000" />
++      <workItem from="1682853288515" duration="270000" />
++      <workItem from="1682853753942" duration="2569000" />
+     </task>
+     <servers />
+   </component>

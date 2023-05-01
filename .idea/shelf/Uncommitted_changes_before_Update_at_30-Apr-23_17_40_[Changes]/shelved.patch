@@ -1,0 +1,93 @@
+Index: src/main/java/module-info.java
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+deleted file mode 100644
+--- a/src/main/java/module-info.java	(revision 420c23bab750d211e010c104b89e24978734e6b3)
++++ /dev/null	(revision 420c23bab750d211e010c104b89e24978734e6b3)
+@@ -1,10 +0,0 @@
+-module com.example.project {
+-    requires javafx.controls;
+-    requires javafx.fxml;
+-    requires java.sql;
+-    requires javafx.web;
+-
+-
+-    opens com.example.project to javafx.fxml;
+-    exports com.example.project;
+-}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"391bc0e2-d93a-4a42-8201-9c3895fe444b\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/project/SignUpPageController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/project/SignUpPageController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"FxmlFile\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java\" root0=\"SKIP_INSPECTION\" />\n    <setting file=\"file://$PROJECT_DIR$/src/main/resources/com/example/project/LearningPort.fxml\" root0=\"SKIP_INSPECTION\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"useMavenConfig\" value=\"true\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"2MeJflixUaVHJDtar1Bn2OTmXCa\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"git-widget-placeholder\": \"Musfiq\",\n    \"ignore.virus.scanning.warn.message\": \"true\",\n    \"last_opened_file_path\": \"F:/ProjectAOOP/codeCAMPUSTrail/src/main/resources/com/example/project\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"project.structure.last.edited\": \"Libraries\",\n    \"project.structure.proportion\": \"0.15\",\n    \"project.structure.side.proportion\": \"0.2\",\n    \"settings.editor.selected.configurable\": \"preferences.JavaFX\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"F:\\ProjectAOOP\\codeCAMPUSTrail\\src\\main\\resources\\com\\example\\project\" />\n      <recent name=\"F:\\ProjectAOOP\\codeCAMPUSTrail\\src\\main\\resources\" />\n      <recent name=\"F:\\ProjectAOOP\\codeCAMPUSTrail\\src\\main\\java\\com\\example\\project\" />\n      <recent name=\"C:\\Users\\rvivy\\OneDrive\\Documents\\Project[1]\\Project\\src\\main\\resources\\com\\example\\project\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"G:\\Project\\codeCAMPUS\\src\\main\\resources\\com\\example\\project\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.Start\">\n    <configuration name=\"AutoTypingText\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.project.AutoTypingText\" />\n      <module name=\"Project\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.example.project.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Start\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.project.Start\" />\n      <module name=\"Project\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.example.project.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Start\" />\n        <item itemvalue=\"Application.AutoTypingText\" />\n        <item itemvalue=\"Application.Start\" />\n        <item itemvalue=\"Application.Start\" />\n        <item itemvalue=\"Application.Start\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"391bc0e2-d93a-4a42-8201-9c3895fe444b\" name=\"Changes\" comment=\"\" />\n      <created>1678122220365</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1678122220365</updated>\n      <workItem from=\"1678122221547\" duration=\"1107000\" />\n      <workItem from=\"1678123356640\" duration=\"2632000\" />\n      <workItem from=\"1678126017469\" duration=\"17000\" />\n      <workItem from=\"1678126254013\" duration=\"4542000\" />\n      <workItem from=\"1679250882082\" duration=\"1595000\" />\n      <workItem from=\"1679321545856\" duration=\"33000\" />\n      <workItem from=\"1679321584973\" duration=\"9539000\" />\n      <workItem from=\"1679910110917\" duration=\"1490000\" />\n      <workItem from=\"1679914057295\" duration=\"255000\" />\n      <workItem from=\"1679935955973\" duration=\"5364000\" />\n      <workItem from=\"1679980526048\" duration=\"4881000\" />\n      <workItem from=\"1679985474123\" duration=\"154000\" />\n      <workItem from=\"1679986633984\" duration=\"302000\" />\n      <workItem from=\"1680077880685\" duration=\"2361000\" />\n      <workItem from=\"1680464946862\" duration=\"964000\" />\n      <workItem from=\"1680517768431\" duration=\"4466000\" />\n      <workItem from=\"1680678000802\" duration=\"5680000\" />\n      <workItem from=\"1680685657132\" duration=\"2157000\" />\n      <workItem from=\"1680687937547\" duration=\"1844000\" />\n      <workItem from=\"1680709465687\" duration=\"6180000\" />\n      <workItem from=\"1680718844751\" duration=\"114000\" />\n      <workItem from=\"1681668283016\" duration=\"2969000\" />\n      <workItem from=\"1681731401966\" duration=\"10000\" />\n      <workItem from=\"1681748407430\" duration=\"3783000\" />\n      <workItem from=\"1681759254240\" duration=\"6792000\" />\n      <workItem from=\"1681879173801\" duration=\"10319000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/Musfiq\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/codeCAMPUS$Start.ic\" NAME=\"Start Coverage Results\" MODIFIED=\"1679321554645\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\n      <FILTER>com.example.project.*</FILTER>\n    </SUITE>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 420c23bab750d211e010c104b89e24978734e6b3)
++++ b/.idea/workspace.xml	(date 1682854805401)
+@@ -6,10 +6,7 @@
+   <component name="ChangeListManager">
+     <list default="true" id="391bc0e2-d93a-4a42-8201-9c3895fe444b" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/SignUpPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/SignUpPageController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/HomePage.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -27,7 +24,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
++        <entry key="$PROJECT_DIR$" value="Noman" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -59,18 +56,18 @@
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "Musfiq",
++    "git-widget-placeholder": "Noman",
+     "ignore.virus.scanning.warn.message": "true",
+-    "last_opened_file_path": "F:/ProjectAOOP/codeCAMPUSTrail/src/main/resources/com/example/project",
++    "last_opened_file_path": "D:/4th Semester/AOOP Lab/AOOP Project/codeCAMPUSTrail",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+     "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Libraries",
++    "project.structure.last.edited": "SDKs",
+     "project.structure.proportion": "0.15",
+     "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "preferences.JavaFX",
++    "settings.editor.selected.configurable": "configurable.group.editor",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+@@ -101,7 +98,7 @@
+     </configuration>
+     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="com.example.project.Start" />
+-      <module name="Project" />
++      <module name="codeCAMPUSTrail" />
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="com.example.project.*" />
+@@ -156,6 +153,11 @@
+       <workItem from="1681748407430" duration="3783000" />
+       <workItem from="1681759254240" duration="6792000" />
+       <workItem from="1681879173801" duration="10319000" />
++      <workItem from="1682782337731" duration="4725000" />
++      <workItem from="1682790793741" duration="139000" />
++      <workItem from="1682825105267" duration="394000" />
++      <workItem from="1682853288515" duration="270000" />
++      <workItem from="1682853753942" duration="1042000" />
+     </task>
+     <servers />
+   </component>

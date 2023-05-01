@@ -20,7 +20,7 @@
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <Button layoutY="1.0" mnemonicParsing="false" style="-fx-background-color: bisque;" text="Back" />
+            <Button layoutY="1.0" mnemonicParsing="false" onAction="#gotoLoginPage" style="-fx-background-color: bisque;" text="Back" />
          </children>
       </AnchorPane>
       <AnchorPane layoutY="229.0" prefHeight="446.0" prefWidth="1080.0" style="-fx-background-color: coral;">
