@@ -15,6 +15,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebEngine;
 import javafx.stage.Stage;
@@ -71,7 +73,7 @@ public class ContestController implements Initializable{
     @FXML
     void gotoNewsFeed(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("newsFeed.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("newsFeed01.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
             stage.setScene(scene);
@@ -162,22 +164,51 @@ public class ContestController implements Initializable{
     @FXML
     private TableColumn<Ranking, String> userName;
     @FXML
+    private TableColumn<Ranking, String> numContest;
+    @FXML
     private TableColumn<Ranking, String> rating;
+
+
     @FXML
     private TableView<Ranking> rankTable;
 
     ObservableList<Ranking> list = FXCollections.observableArrayList(
-           new Ranking("01","tarek200","1200"),
-            new Ranking("02","musfiq2","1180"),
-            new Ranking("03","noman5","1050"),
-            new Ranking("04","parvaze25","870"),
-            new Ranking("05","liza","600"),
-            new Ranking("06","rakib","1200")
+            new Ranking("01","vox_r (Max: Candidate Master)","31","1940"),
+            new Ranking("02","Mahinr10 (Max: Expertr)","87","1726"),
+            new Ranking("03","rocky8086 (Max: Expert)","44","1615"),
+            new Ranking("04","mbhuiyan071 (Max: Specialist)","44","1479"),
+            new Ranking("05","abiramee (Max: Specialist)","110","1431"),
+            new Ranking("06","TarekHasan011 (Max: Specialist)","12","1414"),
+            new Ranking("07","Taniv (Max: Specialist)","150","1410"),
+            new Ranking("08","raidenblackout (Max: Specialist)","117","1406"),
+            new Ranking("09","MFarhan (Max: Specialist)","129","1406"),
+            new Ranking("10","spark_sam (Max: Specialist)","135","1402"),
+            new Ranking("11","ranadepto (Max: Specialist)","145","1402"),
+            new Ranking("12","Shofiq (Max: Pupil)","49","1384"),
+            new Ranking("13","farjana185jahin (Max: Pupil)","1","1382"),
+            new Ranking("14","zeyoFoyez (Max: Pupil)","37","1259"),
+            new Ranking("15","ynnuSunny (Max: Pupil)","107","1213"),
+            new Ranking("16","B4TMAN (Max: Pupil)","77","1086"),
+            new Ranking("17","tarek200","38","1078"),
+            new Ranking("18","F_O_Y_E_Z","159","1065"),
+            new Ranking("19","Kazi_Fahmi","31","1015"),
+            new Ranking("20","monserali704","8","1001"),
+            new Ranking("21","Arnob_was_here","25","1000"),
+            new Ranking("22","yeasirar","21","995"),
+            new Ranking("23","rakib151p","45","976"),
+            new Ranking("24","FatinShadab","4","862"),
+            new Ranking("25","Tashin.Parvez","12","837"),
+            new Ranking("26","Maharab_Hossain_Opi","3","715"),
+            new Ranking("27","tasnintanisha","3","700"),
+            new Ranking("28","mnoman338","7","693"),
+            new Ranking("29","tamim_66","8","592"),
+            new Ranking("30","sifat6472","1","386")
     );
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         rank.setCellValueFactory(new PropertyValueFactory<Ranking, String>("rank"));
         userName.setCellValueFactory(new PropertyValueFactory<Ranking, String>("userName"));
+        numContest.setCellValueFactory(new PropertyValueFactory<Ranking, String>("numContest"));
         rating.setCellValueFactory(new PropertyValueFactory<Ranking, String>("rating"));
         rankTable.setItems(list);
     }

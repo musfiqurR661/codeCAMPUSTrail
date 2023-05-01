@@ -8,11 +8,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
@@ -28,9 +25,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import static com.example.project.Start.*;
+import static com.example.project.Start.counterForShowingPostTypeWise;
+import static com.example.project.Start.currentUserType;
 
-public class NewsFeedController implements Initializable {
+public class NewsfeedForQueryController implements Initializable {
     ///*****...................... FX ID .........................*****/////
 
     @FXML
@@ -128,7 +126,7 @@ public class NewsFeedController implements Initializable {
 
         // Create a VBox to hold the newsfeedVBox items
         VBox newsfeedVBox = new VBox();
-        newsfeedVBox.setPrefSize(600,Region.USE_COMPUTED_SIZE);
+        newsfeedVBox.setPrefSize(600, Region.USE_COMPUTED_SIZE);
         newsfeedVBox.setSpacing(10);
         newsfeedVBox.setPadding(new Insets(10));
 

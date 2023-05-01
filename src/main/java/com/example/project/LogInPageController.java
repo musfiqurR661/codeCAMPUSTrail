@@ -109,13 +109,8 @@ public class LogInPageController {
             if (rs1.next()) {
                 currentUserType= rs1.getString("userType");
             }
-
-
-
         } catch (SQLException e) {
             throw new IllegalStateException("Cannot connect the database!", e);
-
-
         }
 
         try {

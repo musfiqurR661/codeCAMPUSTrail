@@ -37,8 +37,14 @@ public class HelloController implements Initializable {
     private TableColumn<Announcement, String> VJNAME;
     @FXML
     private TableColumn<Announcement, String> VJDATE;
+
     ObservableList<Announcement> list = FXCollections.observableArrayList(
-            new Announcement("DIV 1","01-05-2023","Str 1","01-05-2023","UIU LONG 1","01-05-2023")
+            new Announcement("Codeforces Round 870(Div.2)","May/04/2023(20:35UTC+6)","Starters 88","03/May/2023(Wed 20:30)","CodeCamous Round 1","May/05/2023"),
+            new Announcement("Codeforces Round (Div.1)","May/04/2023(20:35UTC+6)","Starters 89","10/May/2023(Wed 20:30)","CodeCamous Round 2","May/20/2023"),
+            new Announcement("Codeforces Round (Div. 2)","May/08/2023(20:35UTC+6)","Starters 90","17/May/2023(Wed 20:30)","CodeCamous Round 3","May/22/2023"),
+            new Announcement("Codeforces Round (Div. 1)","May/08/2023(20:35UTC+6)","Starters 91","24/May/2023(Wed 20:30)","CodeCamous Round 4","May/25/2023"),
+            new Announcement("Codeforces Round (Div. 2)","May/14/2023(20:35UTC+6)","Starters 92","31/May/2023(Wed 20:30)","",""),
+            new Announcement("Codeforces Round (Div. 1)","May/14/2023(20:35UTC+6)","","","","")
     );
 
     @Override
@@ -46,11 +52,10 @@ public class HelloController implements Initializable {
         CFNAME.setCellValueFactory(new PropertyValueFactory<Announcement,String>("CFNAME"));
         CFDATE.setCellValueFactory(new PropertyValueFactory<Announcement,String>("CFDATE"));
         CCNAME.setCellValueFactory(new PropertyValueFactory<Announcement,String>("CCNAME"));
-        CCDATE.setCellValueFactory(new PropertyValueFactory<Announcement,String>("CFDATE"));
+        CCDATE.setCellValueFactory(new PropertyValueFactory<Announcement,String>("CCDATE"));
         VJNAME.setCellValueFactory(new PropertyValueFactory<Announcement,String>("VJNAME"));
         VJDATE.setCellValueFactory(new PropertyValueFactory<Announcement,String>("VJDATE"));
         TableView.setItems(list);
-
     }
     private Parent root;
     private Stage stage;
