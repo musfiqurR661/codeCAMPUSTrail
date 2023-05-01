@@ -384,7 +384,7 @@ public class HomePageController implements Initializable {
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
             stage.setScene(scene);
         } catch (Exception e) {
-             throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
 
     }

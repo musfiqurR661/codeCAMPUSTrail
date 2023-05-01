@@ -15,14 +15,9 @@ public class Start extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root= FXMLLoader.load(getClass().getResource("Start1.fxml"));
-
-        // Create a new icon for the stage
-       // Image icon = new Image("G:\\codeCAMPUSTrail\\src\\main\\java\\com\\example\\project\\logo1.png");
-        stage = new Stage();
-        stage.getIcons().add(new Image("G:\\codeCAMPUSTrail\\src\\main\\java\\com\\example\\project\\logo.png"));
+        Parent root= FXMLLoader.load(getClass().getResource("LogInPage.fxml"));
         stage.setTitle("codeCampus");
-
+        //Image image = new Image("G:\\codeCAMPUSTrail\\src\\logo.png");
         Scene scene=new Scene(root);
         stage.setScene(scene);
 
@@ -57,6 +52,14 @@ public class Start extends Application {
     public static String currentUserUsername;
     public static String currentUserType;
     public static int counterForMenuOpenClose = 0;
-    public static ArrayList<String> allPost = new ArrayList<>();
+    public static int counterForShowingPostTypeWise = 0;
+    /**
+     *  All -> 0
+     *  Announcement -> 1
+     *  Contest Announcement -> 2
+     *  Query -> 3
+     */
+
+    //public static ArrayList<String> allPost = new ArrayList<>();
     //**** ............ ...................... ........................***///
 }
