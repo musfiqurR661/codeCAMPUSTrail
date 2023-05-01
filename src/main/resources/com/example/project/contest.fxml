@@ -41,9 +41,10 @@
             <Button layoutX="598.0" layoutY="206.0" mnemonicParsing="false" onAction="#nextScene" prefHeight="26.0" prefWidth="122.0" text="Announcement" />
             <TableView fx:id="rankTable" layoutX="66.0" layoutY="52.0" prefHeight="545.0" prefWidth="390.0">
               <columns>
-                <TableColumn fx:id="rank" prefWidth="81.60002136230469" text="Ranking" />
-                <TableColumn fx:id="userName" prefWidth="152.0" text="UserName" />
-                  <TableColumn fx:id="rating" prefWidth="156.0" text="Ratting" />
+                <TableColumn fx:id="rank" prefWidth="43.199981689453125" text="Rank" />
+                <TableColumn fx:id="userName" prefWidth="204.8000030517578" text="UserName" />
+                  <TableColumn fx:id="numContest" prefWidth="83.20001220703125" text="Num Contest" />
+                  <TableColumn fx:id="rating" prefWidth="62.39996337890625" text="Ratting" />
               </columns>
             </TableView>
             <Label layoutX="102.0" layoutY="25.0" prefHeight="26.0" prefWidth="289.0" text="Uinted International University Student Ranking">

@@ -18,19 +18,23 @@ public class Announcement {
     }
 
     public void setCFNAME(String CFNAME) {
+
         this.CFNAME = CFNAME;
     }
 
     public void setCFDATE(String CFDATE) {
+
         this.CFDATE = CFDATE;
     }
 
     public void setCCNAME(String CCNAME) {
+
         this.CCNAME = CCNAME;
     }
 
-    public void setCCDATE(String CCDATE) {
-        this.CCDATE = CCDATE;
+    public void setCCDATE(String CodeCDATE) {
+
+        this.CCDATE = CodeCDATE;
     }
 
     public void setVJNAME(String VJNAME) {
@@ -42,10 +46,12 @@ public class Announcement {
     }
 
     public String getCFNAME() {
+
         return CFNAME;
     }
 
     public String getCFDATE() {
+
         return CFDATE;
     }
 
