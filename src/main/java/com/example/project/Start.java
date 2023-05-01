@@ -9,17 +9,19 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class Start extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-       Parent root= FXMLLoader.load(getClass().getResource("LogInPage.fxml"));
-       stage.setTitle("codeCampus");
-       Image image = new Image("logo1.png");
-       Scene scene=new Scene(root);
-       stage.setScene(scene);
+        Parent root= FXMLLoader.load(getClass().getResource("LogInPage.fxml"));
+        stage.setTitle("codeCampus");
+        Image image = new Image("G:\\codeCAMPUSTrail\\src\\logo.png");
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
 
-       //---------
+        //---------
 //       stage.minHeightProperty().bind(stage.widthProperty().multiply(0.6));
 //       stage.maxHeightProperty().bind(stage.widthProperty().multiply(0.6));
 
@@ -38,12 +40,18 @@ public class Start extends Application {
 //                t1.booleanValue();
 //            }
 //        });
-       //----------
-       stage.show();
+        //----------
+        stage.show();
     }
     public static void main(String[] args) {
         launch(args);
     }
 
+    //**** ............ All static variable ........................***///
+    public static String currentUserName;
+    public static String currentUserUsername;
+    public static String currentUserType;
     public static int counterForMenuOpenClose = 0;
+    public static ArrayList<String> allPost = new ArrayList<>();
+    //**** ............ ...................... ........................***///
 }

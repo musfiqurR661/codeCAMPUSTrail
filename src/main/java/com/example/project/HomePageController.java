@@ -324,6 +324,8 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static com.example.project.Start.*;
 import static javafx.util.Duration.*;
 
 public class HomePageController implements Initializable {
@@ -435,8 +437,14 @@ public class HomePageController implements Initializable {
             }
         }));
 
+        System.out.println(currentUserName);
+
+        System.out.println(currentUserType);
+
 
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
+
+
 }

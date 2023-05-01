@@ -3,12 +3,21 @@ package com.example.project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class NewsFeedController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class NewsFeedController implements Initializable {
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
     @FXML
     void gotoHomePage(ActionEvent event) {
         try {
