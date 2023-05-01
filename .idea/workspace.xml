@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c85d51fe-442b-4847-a162-c1475ec04016" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/HomeButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/HomeButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/LogInPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/LogInPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project/SignUpPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project/SignUpPage.fxml" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Musfiq" />
+
       </map>
     </option>
   </component>
@@ -41,7 +36,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2PB5GrC4yaOnTHD85V79dp9SW24" />
+
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -54,32 +49,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "G:/codeCAMPUSTrail/src/main/resources/com/example/project",
-    "list.type.of.created.stylesheet": "CSS",
+
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\codeCAMPUSTrail\src\main\resources\com\example\project" />
-      <recent name="G:\codeCAMPUSTrail\src\main\java\com\example\project" />
-      <recent name="G:\codeCAMPUSTrail\src\main" />
-      <recent name="G:\codeCAMPUSTrail\src\main\java" />
-      <recent name="G:\codeCAMPUSTrail" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\codeCAMPUSTrail\src\main\java\Client" />
-      <recent name="G:\codeCAMPUSTrail\src" />
-    </key>
-  </component>
+
   <component name="RunManager" selected="Application.Start">
     <configuration name="AutoTypingText" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.project.AutoTypingText" />
@@ -94,19 +70,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client.Main" />
-      <module name="codeCAMPUSTrail" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.project.Start" />
       <module name="codeCAMPUSTrail" />
@@ -136,8 +100,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Start" />
-        <item itemvalue="Application.com.example.project.Client.Main" />
-        <item itemvalue="Application.Main" />
+
         <item itemvalue="Application.AutoTypingText" />
       </list>
     </recent_temporary>
@@ -146,12 +109,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c85d51fe-442b-4847-a162-c1475ec04016" name="Changes" comment="" />
-      <created>1682917541996</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1682917541996</updated>
-      <workItem from="1682917542997" duration="12225000" />
-      <workItem from="1682942770847" duration="8743000" />
+
     </task>
     <servers />
   </component>
