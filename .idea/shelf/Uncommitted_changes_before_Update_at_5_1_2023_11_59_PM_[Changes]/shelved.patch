@@ -1,0 +1,165 @@
+Index: src/main/java/com/example/project/CreatPostPageForStudentController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.project;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.geometry.Insets;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.ScrollPane;\r\nimport javafx.scene.control.TextArea;\r\nimport javafx.scene.layout.AnchorPane;\r\nimport javafx.scene.layout.Background;\r\nimport javafx.scene.layout.Region;\r\nimport javafx.scene.layout.VBox;\r\nimport javafx.scene.paint.Color;\r\nimport javafx.scene.text.Font;\r\nimport javafx.scene.text.FontPosture;\r\nimport javafx.scene.text.FontWeight;\r\nimport javafx.scene.text.TextAlignment;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.net.URL;\r\nimport java.sql.*;\r\nimport java.util.ArrayList;\r\nimport java.util.ResourceBundle;\r\n\r\n//import static com.example.project.Start.allPost;\r\nimport static com.example.project.Start.counterForShowingPostTypeWise;\r\nimport static com.example.project.Start.currentUserName;\r\n\r\npublic class CreatPostPageForStudentController implements Initializable {\r\n\r\n    @Override\r\n    public void initialize(URL url1, ResourceBundle resourceBundle) {\r\n\r\n        ArrayList<String> allPost = new ArrayList<>();\r\n\r\n        ///*** ...................  Database to ArrayList ...........................*****////////\r\n        // Connect to the database\r\n        String url = \"jdbc:mysql://127.0.0.1/musfiq\";\r\n        String user = \"root\";\r\n        String password = \"\";\r\n        System.out.println(\"Connecting database...\");\r\n\r\n        try (Connection conn = DriverManager.getConnection(url, user, password)) {\r\n\r\n            // Execute a SELECT query\r\n            String post = \"SELECT post FROM allpost\";\r\n            PreparedStatement stmt = conn.prepareStatement(post);\r\n            ResultSet rs = stmt.executeQuery();\r\n\r\n            // Iterate over the ResultSet\r\n            while (rs.next()) {\r\n                String value = rs.getString(\"post\");\r\n                allPost.add(value);\r\n            }\r\n\r\n        } catch (SQLException e) {\r\n            throw new IllegalStateException(\"Cannot connect the database!\", e);\r\n        }\r\n        ///*** ...................  .................. ...........................*****////////\r\n        //System.out.println(allPost);\r\n        ///*** ...................  ArrayList to newsfeedVBox ...........................*****////////\r\n\r\n        // Create a VBox to hold the newsfeedVBox items\r\n        VBox newsfeedVBox = new VBox();\r\n        newsfeedVBox.setPrefSize(600,Region.USE_COMPUTED_SIZE);\r\n        newsfeedVBox.setSpacing(10);\r\n        newsfeedVBox.setPadding(new Insets(10));\r\n\r\n\r\n\r\n        // Add some newsfeedVBox items\r\n        for (int i = 0; i < allPost.size(); i++) {\r\n            /**\r\n             *  Name -> 0\r\n             *  Post -> 1\r\n             *  Link -> 2\r\n             *  PostType -> 3\r\n             */\r\n            String[] postProperties = allPost.get(i).split(\"<separatorForUsername,Post,Link&PostType>\");\r\n            /**\r\n             *  All -> 0\r\n             *  Announcement -> 1\r\n             *  Contest Announcement -> 2\r\n             *  Query -> 3\r\n             */\r\n            if ((counterForShowingPostTypeWise == 1) && (!(postProperties[3].compareTo(\"Announcement\") == 0))) {\r\n                continue;\r\n            } else if ((counterForShowingPostTypeWise == 2) && (!(postProperties[3].compareTo(\"ContestAnnouncement\") == 0))) {\r\n                continue;\r\n            } else if ((counterForShowingPostTypeWise == 3) && (!(postProperties[3].compareTo(\"Query\") == 0))) {\r\n                continue;\r\n            }\r\n\r\n            VBox vBox = new VBox();\r\n            vBox.setPrefSize(600, Region.USE_COMPUTED_SIZE);\r\n            //vBox.maxHeight(Region.USE_COMPUTED_SIZE);\r\n\r\n            Label name = new Label();\r\n            name.setPrefSize(600, Region.USE_COMPUTED_SIZE);\r\n            name.setText(postProperties[0]);\r\n            name.setBackground(Background.fill(Color.WHITE));\r\n            Font font1 = Font.font(\"Arial\", FontWeight.BOLD, FontPosture.REGULAR, 12);\r\n            name.setFont(font1);\r\n\r\n            Label mainPost = new Label();\r\n            mainPost.setPrefSize(600, Region.USE_COMPUTED_SIZE);\r\n            //mainPost.maxHeight(Region.USE_COMPUTED_SIZE);\r\n            mainPost.setWrapText(true);\r\n            mainPost.setText(postProperties[1]);\r\n            mainPost.setBackground(Background.fill(Color.WHITE));\r\n            Font font2 = Font.font(\"Arial\", FontWeight.NORMAL, FontPosture.REGULAR, 14);\r\n            name.setFont(font1);\r\n\r\n            vBox.getChildren().add(name);\r\n            vBox.getChildren().add(mainPost);\r\n\r\n            if(!(postProperties[2].compareTo(\"null\")==0)) {\r\n                //Button link = new Button();\r\n                Label link = new Label();\r\n                link.setPrefSize(600, Region.USE_COMPUTED_SIZE);\r\n                link.setWrapText(true);\r\n                link.setText(postProperties[2]);\r\n                link.setTextAlignment(TextAlignment.LEFT);\r\n                link.setBackground(Background.fill(Color.WHITE));\r\n                Font font = Font.font(\"Arial\", FontWeight.NORMAL, FontPosture.ITALIC, 12);\r\n                link.setFont(font);\r\n                link.setTextFill(Color.BLUE);\r\n                vBox.getChildren().add(link);\r\n            }\r\n\r\n            newsfeedVBox.getChildren().add(vBox);\r\n        }\r\n\r\n        // Create a ScrollPane to hold the newsfeedVBox\r\n        scrollablePaneforCreatPostPage.setContent(newsfeedVBox);\r\n        scrollablePaneforCreatPostPage.setFitToWidth(true);\r\n\r\n\r\n\r\n        ///*** ...................  .................. ...........................*****////////\r\n    }\r\n\r\n    ////********* Creat Post  ......................................................................****///////\r\n\r\n    @FXML\r\n    void creatPostActionEvent(ActionEvent event) {\r\n        //\r\n        String post = currentUserName + \"<separatorForUsername,Post,Link&PostType>\" + textAreaForCreatingPost.getText()\r\n                + \"<separatorForUsername,Post,Link&PostType>\"+ \"null\"\r\n                + \"<separatorForUsername,Post,Link&PostType>\" + \"Query\";\r\n        //\r\n\r\n        //\r\n        String url = \"jdbc:mysql://127.0.0.1/musfiq\";\r\n        String username = \"root\";\r\n        String password = \"\";\r\n        System.out.println(\"Connecting database...\");\r\n        try (Connection connection = DriverManager.getConnection(url, username, password)) {\r\n            System.out.println(\"Database connected!\");\r\n        } catch (SQLException e) {\r\n            throw new IllegalStateException(\"Cannot connect the database!\", e);\r\n        }\r\n        Connection con;\r\n        PreparedStatement pst;\r\n        try {\r\n            con = DriverManager.getConnection(url, username, password);\r\n\r\n            pst = con.prepareStatement(\"INSERT INTO allpost(post) VALUES(?)\");\r\n            pst.setString(1, post);\r\n            pst.execute();\r\n        } catch (Exception e) {\r\n            e.getStackTrace();\r\n        }\r\n        //\r\n\r\n\r\n        try {\r\n            Parent root = FXMLLoader.load(getClass().getResource(\"newsFeed01.fxml\"));\r\n            Scene scene = new Scene(root);\r\n            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();\r\n            stage.setScene(scene);\r\n        } catch (Exception e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n    }\r\n\r\n    //////*****........................................*****///////\r\n\r\n    @FXML\r\n    void gotoNewsFeed(ActionEvent event) {\r\n        try {\r\n            Parent root = FXMLLoader.load(getClass().getResource(\"newsFeed01.fxml\"));\r\n            Scene scene = new Scene(root);\r\n            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();\r\n            stage.setScene(scene);\r\n        } catch (Exception e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n    }\r\n    @FXML\r\n    private AnchorPane mainAnchorPaneInNewsfeed;\r\n\r\n    @FXML\r\n    private ScrollPane scrollablePaneforCreatPostPage;\r\n\r\n    @FXML\r\n    private TextArea textAreaForCreatingPost;\r\n\r\n    @FXML\r\n    void gotoContestPage(ActionEvent event) {\r\n\r\n    }\r\n\r\n    @FXML\r\n    void gotoHomePage(ActionEvent event) {\r\n\r\n    }\r\n\r\n    @FXML\r\n    void gotoLearningPortal(ActionEvent event) {\r\n\r\n    }\r\n\r\n\r\n    @FXML\r\n    void gotoStudentsPortal(ActionEvent event) {\r\n\r\n    }\r\n\r\n    @FXML\r\n    void gotoTeachersPortal(ActionEvent event) {\r\n\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/project/CreatPostPageForStudentController.java b/src/main/java/com/example/project/CreatPostPageForStudentController.java
+--- a/src/main/java/com/example/project/CreatPostPageForStudentController.java	(revision 240acda232cc41b5be60a939ff450c369640466c)
++++ b/src/main/java/com/example/project/CreatPostPageForStudentController.java	(date 1682962619131)
+@@ -27,7 +27,6 @@
+ import java.util.ArrayList;
+ import java.util.ResourceBundle;
+ 
+-//import static com.example.project.Start.allPost;
+ import static com.example.project.Start.counterForShowingPostTypeWise;
+ import static com.example.project.Start.currentUserName;
+ 
+Index: src/main/java/com/example/project/Start.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.project;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.beans.value.ChangeListener;\r\nimport javafx.beans.value.ObservableValue;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.image.Image;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class Start extends Application {\r\n\r\n    @Override\r\n    public void start(Stage stage) throws Exception {\r\n        Parent root= FXMLLoader.load(getClass().getResource(\"Start1.fxml\"));\r\n\r\n        // Create a new icon for the stage\r\n       // Image icon = new Image(\"G:\\\\codeCAMPUSTrail\\\\src\\\\main\\\\java\\\\com\\\\example\\\\project\\\\logo1.png\");\r\n        stage = new Stage();\r\n        stage.getIcons().add(new Image(\"G:\\\\codeCAMPUSTrail\\\\src\\\\main\\\\java\\\\com\\\\example\\\\project\\\\logo.png\"));\r\n        stage.setTitle(\"codeCampus\");\r\n\r\n        Scene scene=new Scene(root);\r\n        stage.setScene(scene);\r\n\r\n        //---------\r\n//       stage.minHeightProperty().bind(stage.widthProperty().multiply(0.6));\r\n//       stage.maxHeightProperty().bind(stage.widthProperty().multiply(0.6));\r\n\r\n//        stage.iconifiedProperty().addListener(new ChangeListener<Boolean>() {\r\n//\r\n//            @Override\r\n//            public void changed(ObservableValue<? extends Boolean> ov, Boolean t, Boolean t1) {\r\n//                System.out.println(\"minimized:\" + t1.booleanValue());\r\n//            }\r\n//        });\r\n\r\n//        stage.maximizedProperty().addListener(new ChangeListener<Boolean>() {/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\r\n//\r\n//            @Override\r\n//            public void changed(ObservableValue<? extends Boolean> ov, Boolean t, Boolean t1) {\r\n//                t1.booleanValue();\r\n//            }\r\n//        });\r\n        //----------\r\n        stage.show();\r\n    }\r\n    public static void main(String[] args) {\r\n        launch(args);\r\n    }\r\n\r\n    //**** ............ All static variable ........................***///\r\n    public static String currentUserName;\r\n    public static String currentUserUsername;\r\n    public static String currentUserType;\r\n    public static int counterForMenuOpenClose = 0;\r\n    public static ArrayList<String> allPost = new ArrayList<>();\r\n    //**** ............ ...................... ........................***///\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/project/Start.java b/src/main/java/com/example/project/Start.java
+--- a/src/main/java/com/example/project/Start.java	(revision 240acda232cc41b5be60a939ff450c369640466c)
++++ b/src/main/java/com/example/project/Start.java	(date 1682962619137)
+@@ -57,6 +57,7 @@
+     public static String currentUserUsername;
+     public static String currentUserType;
+     public static int counterForMenuOpenClose = 0;
++    
+     public static ArrayList<String> allPost = new ArrayList<>();
+     //**** ............ ...................... ........................***///
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"c85d51fe-442b-4847-a162-c1475ec04016\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java\" root0=\"SKIP_INSPECTION\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/resources/com/example/project/LearningPort.fxml\" root0=\"SKIP_INSPECTION\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n\r\n  <component name=\"RunManager\" selected=\"Application.Start\">\r\n    <configuration name=\"AutoTypingText\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.project.AutoTypingText\" />\r\n      <module name=\"Project\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.project.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n\r\n    <configuration name=\"Start\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.project.Start\" />\r\n      <module name=\"codeCAMPUSTrail\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.project.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"com.example.project.Client.Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.project.Client.Main\" />\r\n      <module name=\"codeCAMPUSTrail\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.project.Client.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Start\" />\r\n\r\n        <item itemvalue=\"Application.AutoTypingText\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"c85d51fe-442b-4847-a162-c1475ec04016\" name=\"Changes\" comment=\"\" />\r\n\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/codeCAMPUS$Start.ic\" NAME=\"Start Coverage Results\" MODIFIED=\"1679321554645\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>com.example.project.*</FILTER>\r\n    </SUITE>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 240acda232cc41b5be60a939ff450c369640466c)
++++ b/.idea/workspace.xml	(date 1682963950042)
+@@ -4,28 +4,25 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="c85d51fe-442b-4847-a162-c1475ec04016" name="Changes" comment="">
++    <list default="true" id="b10c6c34-1440-4616-a592-401272c9137d" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01-May-23_2_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01-May-23_2_41__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-Apr-23_17_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-Apr-23_17_40__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-Apr-23_17_40__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-Apr-23_17_40__Changes_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-Apr-23_18_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-Apr-23_18_12__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_30_2023_9_26_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_30_2023_9_26_PM__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/CreatPostPageForStudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/CreatPostPageForStudentController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/Start.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="FxmlFile" />
+-        <option value="Class" />
+-        <option value="CSS File" />
+-      </list>
+-    </option>
+-  </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-
++        <entry key="$PROJECT_DIR$" value="main" />
+       </map>
+     </option>
+   </component>
+@@ -33,30 +30,15 @@
+     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project/LogInPageController.java" root0="SKIP_INSPECTION" />
+     <setting file="file://$PROJECT_DIR$/src/main/resources/com/example/project/LearningPort.fxml" root0="SKIP_INSPECTION" />
+   </component>
+-  <component name="MarkdownSettingsMigration">
+-    <option name="stateVersion" value="1" />
+-  </component>
+-
+   <component name="ProjectLevelVcsManager">
+     <ConfirmationsSetting value="1" id="Add" />
+   </component>
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+-  </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-
+-  <component name="RunManager" selected="Application.Start">
++    "node.js.selected.package.tslint": "(autodetect)"
++  }
++}]]></component>
++  <component name="RunManager">
+     <configuration name="AutoTypingText" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="com.example.project.AutoTypingText" />
+       <module name="Project" />
+@@ -70,7 +52,19 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-
++    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Client.Main" />
++      <module name="codeCAMPUSTrail" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="Client.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="com.example.project.Start" />
+       <module name="codeCAMPUSTrail" />
+@@ -100,21 +94,14 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Application.Start" />
+-
++        <item itemvalue="Application.Main" />
++        <item itemvalue="Application.com.example.project.Client.Main" />
+         <item itemvalue="Application.AutoTypingText" />
+       </list>
+     </recent_temporary>
+   </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="c85d51fe-442b-4847-a162-c1475ec04016" name="Changes" comment="" />
+-
+-    </task>
+     <servers />
+-  </component>
+-  <component name="TypeScriptGeneratedFilesManager">
+-    <option name="version" value="3" />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+     <SUITE FILE_PATH="coverage/codeCAMPUS$Start.ic" NAME="Start Coverage Results" MODIFIED="1679321554645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
