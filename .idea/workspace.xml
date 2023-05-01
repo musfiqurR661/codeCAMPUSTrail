@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c85d51fe-442b-4847-a162-c1475ec04016" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,15 +16,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+
       </map>
     </option>
   </component>
@@ -34,7 +36,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2PA92nEhZO1Wr2fG9xNxqBUjGOv" />
+
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -47,19 +49,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "G:/Project/University_Projects",
+
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+
   <component name="RunManager" selected="Application.Start">
     <configuration name="AutoTypingText" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.project.AutoTypingText" />
@@ -74,6 +70,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.project.Start" />
       <module name="codeCAMPUSTrail" />
@@ -87,9 +84,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.example.project.Client.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.project.Client.Main" />
+      <module name="codeCAMPUSTrail" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.project.Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Start" />
+
         <item itemvalue="Application.AutoTypingText" />
       </list>
     </recent_temporary>
@@ -98,12 +109,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c85d51fe-442b-4847-a162-c1475ec04016" name="Changes" comment="" />
-      <created>1682888825896</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1682888825896</updated>
-      <workItem from="1682888826931" duration="1056000" />
-      <workItem from="1682915721010" duration="30604000" />
+
     </task>
     <servers />
   </component>
