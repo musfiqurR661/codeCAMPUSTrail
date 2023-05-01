@@ -23,7 +23,7 @@ public class WebView implements Initializable{
     @FXML
     void gotoPreviousPage(ActionEvent event) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("LearningPort.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("contest.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
