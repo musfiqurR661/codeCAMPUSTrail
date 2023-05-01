@@ -8,14 +8,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 
 public class Start extends Application {
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root= FXMLLoader.load(getClass().getResource("Start1.fxml"));
+
+     Image image = new Image("G:\\codeCAMPUSTrail\\src\\logo.png");
+     stage.setTitle("codeCampus");
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
+
 
         stage.show();
     }

@@ -136,18 +136,30 @@
                <children>
                   <Pane prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: tomato;" />
-                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="W3School" textFill="#14e136">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoYoutube" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: white;" />
+                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="YouTube" textFill="#14e136">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="61.0" fitWidth="88.0" layoutX="36.0" layoutY="14.0">
+                           <image>
+                              <Image url="@youtube.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <Pane layoutX="10.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: purple;" />
-                        <Label alignment="CENTER" layoutX="30.0" layoutY="82.0" prefHeight="19.0" prefWidth="98.0" text="Stackoverflow">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoHakerrank" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: white;">
+                           <graphic>
+                              <ImageView fitHeight="52.0" fitWidth="75.0">
+                                 <image>
+                                    <Image url="@hackerRank.jpg" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Label alignment="CENTER" layoutX="30.0" layoutY="82.0" prefHeight="19.0" prefWidth="98.0" text="HakerRank">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -156,28 +168,45 @@
                   </Pane>
                   <Pane layoutX="155.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: white;" />
-                        <Label alignment="CENTER" layoutX="25.0" layoutY="83.0" prefHeight="19.0" prefWidth="98.0" text="CP Algorithm">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoCodewars" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: black;" />
+                        <Label alignment="CENTER" layoutX="25.0" layoutY="83.0" prefHeight="19.0" prefWidth="98.0" text="CodeWars">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="61.0" fitWidth="88.0" layoutX="37.0" layoutY="14.0">
+                           <image>
+                              <Image url="@codewars.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <Pane layoutX="300.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Honeydew;" />
-                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="Codeforwin" textFill="#ff020b">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoCodeorg" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: black;" />
+                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="Code.org" textFill="#ff020b">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="50.0" fitWidth="72.0" layoutX="43.0" layoutY="19.0">
+                           <image>
+                              <Image url="@CodeOrg.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <Pane layoutX="445.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Azure;" />
-                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="Programiz" textFill="#680de8">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Azure;">
+                           <graphic>
+                              <ImageView fitHeight="56.0" fitWidth="75.0">
+                                 <image>
+                                    <Image url="@tutorialPoint.jpg" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Label alignment="CENTER" layoutX="35.0" layoutY="81.0" prefHeight="19.0" prefWidth="88.0" text="Tutorialspoint" textFill="#680de8">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -186,12 +215,17 @@
                   </Pane>
                   <Pane layoutX="590.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="84.0" style="-fx-background-color: White;" />
-                        <Label alignment="CENTER" layoutX="36.0" layoutY="82.0" prefHeight="17.0" prefWidth="72.0" text="gFg" textFill="#447c4f">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoGitHub" prefHeight="67.0" prefWidth="84.0" style="-fx-background-color: White;" />
+                        <Label alignment="CENTER" layoutX="47.0" layoutY="81.0" prefHeight="17.0" prefWidth="72.0" text="GitHub" textFill="#447c4f">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="68.0" fitWidth="91.0" layoutX="37.0" layoutY="14.0">
+                           <image>
+                              <Image url="@github.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                </children>
@@ -200,18 +234,30 @@
                <children>
                   <Pane prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: tomato;" />
-                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="W3School" textFill="#14e136">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoGDB" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: white;" />
+                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="GDB" textFill="#14e136">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="60.0" fitWidth="84.0" layoutX="37.0" layoutY="15.0">
+                           <image>
+                              <Image url="@gdb.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <Pane layoutX="10.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: purple;" />
-                        <Label alignment="CENTER" layoutX="30.0" layoutY="82.0" prefHeight="19.0" prefWidth="98.0" text="Stackoverflow">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoFreeCodeCamp" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: white;">
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="63.0">
+                                 <image>
+                                    <Image url="@frecodeCamp.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Label alignment="CENTER" layoutX="30.0" layoutY="82.0" prefHeight="19.0" prefWidth="98.0" text="freeCode Camp">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -220,42 +266,62 @@
                   </Pane>
                   <Pane layoutX="155.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: white;" />
-                        <Label alignment="CENTER" layoutX="25.0" layoutY="83.0" prefHeight="19.0" prefWidth="98.0" text="CP Algorithm">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoCoderByte" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: black;" />
+                        <Label alignment="CENTER" layoutX="25.0" layoutY="83.0" prefHeight="19.0" prefWidth="98.0" text="Coderbyte">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="53.0" fitWidth="72.0" layoutX="43.0" layoutY="18.0">
+                           <image>
+                              <Image url="@coderbyte.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <Pane layoutX="300.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Honeydew;" />
-                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="Codeforwin" textFill="#ff020b">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoTopCoder" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Honeydew;" />
+                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="topCoder" textFill="#ff020b">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="60.0" fitWidth="88.0" layoutX="38.0" layoutY="14.0">
+                           <image>
+                              <Image url="@topcoder.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <Pane layoutX="445.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Azure;" />
-                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="Programiz" textFill="#680de8">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoLightOj" prefHeight="60.0" prefWidth="84.0" style="-fx-background-color: Azure;" />
+                        <Label alignment="CENTER" layoutX="43.0" layoutY="83.0" prefHeight="17.0" prefWidth="72.0" text="LightOJ" textFill="#680de8">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="60.0" fitWidth="84.0" layoutX="37.0" layoutY="15.0">
+                           <image>
+                              <Image url="@lightoj.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <Pane layoutX="590.0" layoutY="10.0" prefHeight="122.0" prefWidth="145.0">
                      <children>
-                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="84.0" style="-fx-background-color: White;" />
-                        <Label alignment="CENTER" layoutX="36.0" layoutY="82.0" prefHeight="17.0" prefWidth="72.0" text="gFg" textFill="#447c4f">
+                        <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoGuru99" prefHeight="67.0" prefWidth="84.0" style="-fx-background-color: White;" />
+                        <Label alignment="CENTER" layoutX="36.0" layoutY="82.0" prefHeight="17.0" prefWidth="72.0" text="Guru99" textFill="#447c4f">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="68.0" fitWidth="84.0" layoutX="37.0" layoutY="14.0">
+                           <image>
+                              <Image url="@guru99.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                </children>
