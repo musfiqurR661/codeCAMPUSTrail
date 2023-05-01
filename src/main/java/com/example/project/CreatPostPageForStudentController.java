@@ -27,7 +27,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-//import static com.example.project.Start.allPost;
 import static com.example.project.Start.counterForShowingPostTypeWise;
 import static com.example.project.Start.currentUserName;
 

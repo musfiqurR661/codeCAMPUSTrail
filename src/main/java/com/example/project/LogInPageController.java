@@ -50,6 +50,7 @@ public class LogInPageController {
     @FXML
     void loginClickedByMouseClicked(MouseEvent event) {
         loginEventMethod(event);
+
     }
 
     @FXML
@@ -72,10 +73,10 @@ public class LogInPageController {
 
     // Method for going to home page from login page
     void loginEventMethod(Event event) {
+
+
         String input = inputbox.getText();
         String pas = passwordbox.getText();
-
-        //8888
 
         currentUserUsername = input;
 
@@ -175,6 +176,14 @@ public class LogInPageController {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+//        //--------------Chat system-------------------------//
+//
+//        Server.main(new String[]{"m"});
+
+
+
+
     }
     ////**----------------------------------------------------------------------------------------------------**////
 
