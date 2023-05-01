@@ -67,7 +67,7 @@
 //    @FXML
 //    void gotoNewsFeed(ActionEvent event) {
 //        try {
-//            Parent root = FXMLLoader.load(getClass().getResource("newsFeed.fxml"));
+//            Parent root = FXMLLoader.load(getClass().getResource("newsFeed01.fxml"));
 //            Scene scene = new Scene(root);
 //            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
 //            stage.setScene(scene);
@@ -239,7 +239,7 @@ public class HomePageController implements Initializable {
     @FXML
     void gotoNewsFeed(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("newsFeed.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("newsFeed01.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
             stage.setScene(scene);
@@ -379,12 +379,12 @@ public class HomePageController implements Initializable {
     @FXML
     void gotoNewsFeed(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("newsFeed.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("newsFeed01.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
             stage.setScene(scene);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+             throw new RuntimeException(e);
         }
 
     }
@@ -446,5 +446,15 @@ public class HomePageController implements Initializable {
         timeline.play();
     }
 
-
+    @FXML
+    void gotoLoginPage(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("LogInPage.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+            stage.setScene(scene);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

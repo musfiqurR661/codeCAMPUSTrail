@@ -52,7 +52,7 @@ public class TeacherController {
     @FXML
     void gotoNewsFeed(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("newsFeed.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("newsFeed01.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
             stage.setScene(scene);

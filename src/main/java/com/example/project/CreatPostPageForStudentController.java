@@ -8,7 +8,6 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
@@ -28,71 +27,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import static com.example.project.Start.*;
+//import static com.example.project.Start.allPost;
+import static com.example.project.Start.counterForShowingPostTypeWise;
+import static com.example.project.Start.currentUserName;
 
-public class NewsFeedController implements Initializable {
-    ///*****...................... FX ID .........................*****/////
-
-    @FXML
-    private ScrollPane scrollablePaneforNewsfeed;
-    @FXML
-    private ScrollPane mainAnchorPaneInNewsfeed;
-
-    ///*****........... ...........................................*****/////
-
-    ///***........ Action Event For Showing Post Type Wise .............**///////
-    @FXML
-    void allPostActionEvent(ActionEvent event) {
-        counterForShowingPostTypeWise = 0;
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("newsFeed01.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void announcementActionEvent(ActionEvent event) {
-        counterForShowingPostTypeWise = 1;
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("NewsfeedForAnnouncement.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void contestAnnouncementActionEvent(ActionEvent event) {
-        counterForShowingPostTypeWise = 2;
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("NewsfeedForContestAnnouncement.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void queryActionEvent(ActionEvent event) {
-        counterForShowingPostTypeWise = 3;
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("NewsfeedForQuery.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-    ///*****........... ...........................................*****/////
+public class CreatPostPageForStudentController implements Initializable {
 
     @Override
     public void initialize(URL url1, ResourceBundle resourceBundle) {
@@ -198,26 +137,50 @@ public class NewsFeedController implements Initializable {
         }
 
         // Create a ScrollPane to hold the newsfeedVBox
-        scrollablePaneforNewsfeed.setContent(newsfeedVBox);
-        scrollablePaneforNewsfeed.setFitToWidth(true);
+        scrollablePaneforCreatPostPage.setContent(newsfeedVBox);
+        scrollablePaneforCreatPostPage.setFitToWidth(true);
 
 
 
         ///*** ...................  .................. ...........................*****////////
     }
 
+    ////********* Creat Post  ......................................................................****///////
 
     @FXML
-    void creatPostButtonActionEvent(ActionEvent event) {
-        String nextScene = null;
-        if(currentUserType.compareTo("Student") == 0) {
-            nextScene = "CreatPostPageForStudent.fxml";
+    void creatPostActionEvent(ActionEvent event) {
+        //
+        String post = currentUserName + "<separatorForUsername,Post,Link&PostType>" + textAreaForCreatingPost.getText()
+                + "<separatorForUsername,Post,Link&PostType>"+ "null"
+                + "<separatorForUsername,Post,Link&PostType>" + "Query";
+        //
+
+        //
+        String url = "jdbc:mysql://127.0.0.1/musfiq";
+        String username = "root";
+        String password = "";
+        System.out.println("Connecting database...");
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            System.out.println("Database connected!");
+        } catch (SQLException e) {
+            throw new IllegalStateException("Cannot connect the database!", e);
         }
-        else if (currentUserType.compareTo("Teacher") == 0) {
-            nextScene = "CreatPostPageForTeacher.fxml";
-        }
+        Connection con;
+        PreparedStatement pst;
         try {
-            Parent root = FXMLLoader.load(getClass().getResource(nextScene));
+            con = DriverManager.getConnection(url, username, password);
+
+            pst = con.prepareStatement("INSERT INTO allpost(post) VALUES(?)");
+            pst.setString(1, post);
+            pst.execute();
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+        //
+
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("newsFeed01.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
             stage.setScene(scene);
@@ -226,45 +189,7 @@ public class NewsFeedController implements Initializable {
         }
     }
 
-
-    @FXML
-    void gotoHomePage(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-    @FXML
-    void gotoContestPage(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("contest.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void gotoLearningPortal(ActionEvent event) {
-
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("LearningPort.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-    }
+    //////*****........................................*****///////
 
     @FXML
     void gotoNewsFeed(ActionEvent event) {
@@ -276,33 +201,41 @@ public class NewsFeedController implements Initializable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+    @FXML
+    private AnchorPane mainAnchorPaneInNewsfeed;
+
+    @FXML
+    private ScrollPane scrollablePaneforCreatPostPage;
+
+    @FXML
+    private TextArea textAreaForCreatingPost;
+
+    @FXML
+    void gotoContestPage(ActionEvent event) {
 
     }
 
     @FXML
+    void gotoHomePage(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gotoLearningPortal(ActionEvent event) {
+
+    }
+
+
+    @FXML
     void gotoStudentsPortal(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("Student.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
 
     }
 
     @FXML
     void gotoTeachersPortal(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("Teacher.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
 
     }
+
 
 }

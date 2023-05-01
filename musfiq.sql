@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2023 at 07:05 PM
+-- Generation Time: Apr 30, 2023 at 11:06 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -24,6 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `allpost`
+--
+
+CREATE TABLE `allpost` (
+  `id` int(11) NOT NULL,
+  `post` varchar(3000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `useraccounts`
 --
 
@@ -32,15 +43,19 @@ CREATE TABLE `useraccounts` (
   `fullName` text NOT NULL,
   `email` text NOT NULL,
   `username` text NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `userType` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `useraccounts`
 --
 
-INSERT INTO `useraccounts` (`id`, `fullName`, `email`, `username`, `password`) VALUES
-(1, 'Musfiqur Rahman', 'abc@gmail.com', 'musfi11', '1122');
+INSERT INTO `useraccounts` (`id`, `fullName`, `email`, `username`, `password`, `userType`) VALUES
+(7, 'bb', 'edr', 'reg', 'ss', 'Teacher'),
+(8, 'Ajwad Akil', 'akil@gmail.com', 'azakil', '1122w', 'Teacher'),
+(9, 'Musfq', 'aa', 'aa', '11', 'Student'),
+(10, 'md noman', 'nm@gmail.com', 'nm', 'nm', 'Student');
 
 --
 -- Indexes for dumped tables
@@ -60,7 +75,7 @@ ALTER TABLE `useraccounts`
 -- AUTO_INCREMENT for table `useraccounts`
 --
 ALTER TABLE `useraccounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
