@@ -194,6 +194,10 @@ public class NewsFeedController implements Initializable {
                 vBox.getChildren().add(link);
             }
 
+            if(postProperties[3].compareTo("Query") == 0) {
+
+            }
+
             newsfeedVBox.getChildren().add(vBox);
         }
 
