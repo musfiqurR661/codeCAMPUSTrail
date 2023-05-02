@@ -8,14 +8,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -168,6 +162,10 @@ public class NewsFeedController implements Initializable {
             Font font1 = Font.font("Arial", FontWeight.BOLD, FontPosture.REGULAR, 12);
             name.setFont(font1);
 
+            AnchorPane space = new AnchorPane();
+            space.setPrefSize(600, 3);
+            space.setBackground(Background.fill(Color.WHITE));
+
             Label mainPost = new Label();
             mainPost.setPrefSize(600, Region.USE_COMPUTED_SIZE);
             //mainPost.maxHeight(Region.USE_COMPUTED_SIZE);
@@ -178,9 +176,15 @@ public class NewsFeedController implements Initializable {
             name.setFont(font1);
 
             vBox.getChildren().add(name);
+            vBox.getChildren().add(space);
             vBox.getChildren().add(mainPost);
 
             if(!(postProperties[2].compareTo("null")==0)) {
+
+                AnchorPane space1 = new AnchorPane();
+                space1.setPrefSize(600, 2);
+                space1.setBackground(Background.fill(Color.WHITE));
+
                 //Button link = new Button();
                 Label link = new Label();
                 link.setPrefSize(600, Region.USE_COMPUTED_SIZE);
@@ -191,11 +195,38 @@ public class NewsFeedController implements Initializable {
                 Font font = Font.font("Arial", FontWeight.NORMAL, FontPosture.ITALIC, 12);
                 link.setFont(font);
                 link.setTextFill(Color.BLUE);
+
+                vBox.getChildren().add(space1);
                 vBox.getChildren().add(link);
             }
 
+            // answer about query.............................................
+
             if(postProperties[3].compareTo("Query") == 0) {
 
+                AnchorPane space2 = new AnchorPane();
+                space2.setPrefSize(600, 3);
+                //space2.setBackground(Background.fill(Color.WHITE));
+
+                HBox hBox = new HBox();
+                hBox.setPrefSize(600, 20);
+
+                TextField space3 = new TextField();
+                space3.setPrefSize(520, 20);
+                space3.setBackground(Background.fill(Color.WHITE));
+
+                Button answer = new Button();
+                answer.setPrefSize(80, 20);
+                answer.setText("Answer");
+                Font font3 = Font.font("Arial", FontWeight.BOLD, FontPosture.REGULAR, 12);
+                answer.setFont(font3);
+
+                hBox.getChildren().add(space3);
+                hBox.getChildren().add(answer);
+
+
+                vBox.getChildren().add(space2);
+                vBox.getChildren().add(hBox);
             }
 
             newsfeedVBox.getChildren().add(vBox);
