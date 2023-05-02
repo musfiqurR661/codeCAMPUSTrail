@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -25,6 +27,11 @@
       </AnchorPane>
       <AnchorPane layoutY="229.0" prefHeight="446.0" prefWidth="1080.0" style="-fx-background-color: coral;">
          <children>
+            <ImageView fitHeight="446.0" fitWidth="1080.0">
+               <image>
+                  <Image url="@learningport.jpg" />
+               </image>
+            </ImageView>
             <VBox layoutX="6.0" prefHeight="446.0" prefWidth="139.0">
                <children>
                   <Pane prefHeight="34.0" prefWidth="145.0" />

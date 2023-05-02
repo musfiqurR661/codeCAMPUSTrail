@@ -39,6 +39,7 @@ public class HelloController implements Initializable {
     private TableColumn<Announcement, String> VJDATE;
 
     ObservableList<Announcement> list = FXCollections.observableArrayList(
+           // new Announcement("CodeCampus contest ","apr")
             new Announcement("Codeforces Round 870(Div.2)","May/04/2023(20:35UTC+6)","Starters 88","03/May/2023(Wed 20:30)","CodeCamous Round 1","May/05/2023"),
             new Announcement("Codeforces Round (Div.1)","May/04/2023(20:35UTC+6)","Starters 89","10/May/2023(Wed 20:30)","CodeCamous Round 2","May/20/2023"),
             new Announcement("Codeforces Round (Div. 2)","May/08/2023(20:35UTC+6)","Starters 90","17/May/2023(Wed 20:30)","CodeCamous Round 3","May/22/2023"),
