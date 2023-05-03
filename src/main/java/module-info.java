@@ -6,7 +6,7 @@ module com.example.project {
     requires javafx.swing;
     requires AnimateFX;
     requires javafx.graphics;
-
+    requires MaterialFX;
 
 
     opens com.example.project to javafx.fxml;
