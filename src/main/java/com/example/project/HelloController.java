@@ -68,7 +68,7 @@ public class HelloController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    public void gotoContestPage(ActionEvent e) throws IOException {
+    public void goBack(ActionEvent e) throws IOException {
         root=FXMLLoader.load(Objects.requireNonNull(getClass().getResource("contest.fxml")));
         scene=new Scene(root);
         stage=(Stage)((Node) e.getSource()).getScene().getWindow();
