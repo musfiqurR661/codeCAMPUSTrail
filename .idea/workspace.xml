@@ -12,12 +12,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/HomePageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/LearninPortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/LearninPortController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/NewsFeedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/NewsFeedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/NewsfeedForAnnouncementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/NewsfeedForAnnouncementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/NewsfeedForContestAnnouncementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/NewsfeedForContestAnnouncementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/NewsfeedForQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/NewsfeedForQueryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/Start.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/StudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/TeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/WebView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/WebView.java" afterDir="false" />
