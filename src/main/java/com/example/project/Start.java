@@ -18,7 +18,7 @@ public class Start extends Application {
         Parent root= FXMLLoader.load(getClass().getResource("Start1.fxml"));
 
      //Image image = new Image("G:\\codeCAMPUSTrail\\src\\logo.png");
-        stage.setTitle("codeCampus");
+
         Scene scene=new Scene(root);
         stage.setScene(scene);
 

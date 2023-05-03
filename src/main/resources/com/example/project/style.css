@@ -19,3 +19,13 @@
     -fx-background-color: white;
     -fx-text-fill: black;
 }
+.codeforces-button{
+    -fx-background-color: aqua;
+    -fx-background-radius: 50;
+    -fx-text-fill: black;
+}
+.codeforces-button:hover{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+
+}

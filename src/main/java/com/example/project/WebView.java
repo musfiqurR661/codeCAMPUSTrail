@@ -113,7 +113,7 @@ public class WebView implements Initializable{
     private Stage stage;
     private Scene scene;
     @FXML
-    void gotoPreviousPage(ActionEvent event) throws IOException {
+    void goBack(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(getClass().getResource("LearningPort.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -160,7 +160,7 @@ public class WebView implements Initializable{
         }
         else if(LearninPortController.webviewControlCounter ==7) {
             WebEngine webEngine = webpage.getEngine();
-            webEngine.load("https://www.youtube.com");
+            webEngine.load("https://www.youtube.com/");
         }
         else if(LearninPortController.webviewControlCounter ==8) {
             WebEngine webEngine = webpage.getEngine();
@@ -206,17 +206,6 @@ public class WebView implements Initializable{
             WebEngine webEngine = webpage.getEngine();
             webEngine.load("https://www.guru99.com");
         }
-        if(ContestController.ContestControllerCounter==1){
-            WebEngine webEngine = webpage.getEngine();
-            webEngine.load("https://www.codeforces.com");
-        }
-        else if (ContestController.ContestControllerCounter==2) {
-            WebEngine webEngine = webpage.getEngine();
-            webEngine.load(("https://www.codechef.com"));
-        }
-        else if (ContestController.ContestControllerCounter==3) {
-            WebEngine webEngine = webpage.getEngine();
-            webEngine.load(("https://vjudge.net/"));
-        }
+
     }
 }

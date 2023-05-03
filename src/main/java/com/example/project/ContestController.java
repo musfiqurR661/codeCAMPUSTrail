@@ -130,7 +130,7 @@ public class ContestController implements Initializable{
     }
 
     void clickEvent(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("webview.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("webview2.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -140,9 +140,21 @@ public class ContestController implements Initializable{
     private Stage stage;
     private Scene scene;
 
+    @FXML
+    void LogOut(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("Start1.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+            stage.setScene(scene);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     //go back
     public void goBack(ActionEvent e) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("contest.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HomePage.fxml")));
         scene = new Scene(root);
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         stage.setScene(scene);

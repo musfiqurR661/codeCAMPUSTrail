@@ -263,7 +263,7 @@ public class NewsFeedController implements Initializable {
 
 
     @FXML
-    void gotoHomePage(ActionEvent event) {
+    void goBack(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
             Scene scene = new Scene(root);
@@ -340,4 +340,7 @@ public class NewsFeedController implements Initializable {
 
     }
 
+    public void LogOut(ActionEvent actionEvent) {
+
+    }
 }
