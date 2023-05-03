@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
@@ -166,6 +167,10 @@ public class NewsfeedForQueryController implements Initializable {
             Font font1 = Font.font("Arial", FontWeight.BOLD, FontPosture.REGULAR, 12);
             name.setFont(font1);
 
+            AnchorPane space = new AnchorPane();
+            space.setPrefSize(600, 3);
+            space.setBackground(Background.fill(Color.WHITE));
+
             Label mainPost = new Label();
             mainPost.setPrefSize(600, Region.USE_COMPUTED_SIZE);
             //mainPost.maxHeight(Region.USE_COMPUTED_SIZE);
@@ -176,9 +181,15 @@ public class NewsfeedForQueryController implements Initializable {
             name.setFont(font1);
 
             vBox.getChildren().add(name);
+            vBox.getChildren().add(space);
             vBox.getChildren().add(mainPost);
 
             if(!(postProperties[2].compareTo("null")==0)) {
+
+                AnchorPane space1 = new AnchorPane();
+                space1.setPrefSize(600, 2);
+                space1.setBackground(Background.fill(Color.WHITE));
+
                 //Button link = new Button();
                 Label link = new Label();
                 link.setPrefSize(600, Region.USE_COMPUTED_SIZE);
@@ -189,6 +200,8 @@ public class NewsfeedForQueryController implements Initializable {
                 Font font = Font.font("Arial", FontWeight.NORMAL, FontPosture.ITALIC, 12);
                 link.setFont(font);
                 link.setTextFill(Color.BLUE);
+
+                vBox.getChildren().add(space1);
                 vBox.getChildren().add(link);
             }
 
