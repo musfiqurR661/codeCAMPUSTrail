@@ -37,12 +37,7 @@ public class CreatPostPageForTeacherController implements Initializable {
 
         ///*** ...................  Database to ArrayList ...........................*****////////
         // Connect to the database
-        String url = "jdbc:mysql://127.0.0.1/musfiq";
-        String user = "root";
-        String password = "";
-        System.out.println("Connecting database...");
-
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+        try (Connection conn = Database.connect()) {
 
             // Execute a SELECT query
             String post = "SELECT post FROM allpost";
@@ -188,25 +183,13 @@ public class CreatPostPageForTeacherController implements Initializable {
                 + "<separatorForUsername,Post,Link&PostType>" + postType;
         //
 
-        String url = "jdbc:mysql://127.0.0.1/musfiq";
-        String username = "root";
-        String password = "";
-        System.out.println("Connecting database...");
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Database connected!");
-        } catch (SQLException e) {
-            throw new IllegalStateException("Cannot connect the database!", e);
-        }
-        Connection con;
-        PreparedStatement pst;
-        try {
-            con = DriverManager.getConnection(url, username, password);
-
-            pst = con.prepareStatement("INSERT INTO allpost(post) VALUES(?)");
+        try (Connection con = Database.connect();
+             PreparedStatement pst = con.prepareStatement("INSERT INTO allpost(post) VALUES(?)")) {
             pst.setString(1, post);
-            pst.execute();
-        } catch (Exception e) {
-            e.getStackTrace();
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new IllegalStateException("Cannot connect the database!", e);
         }
         //
 

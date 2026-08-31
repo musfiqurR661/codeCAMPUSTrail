@@ -1,16 +1,17 @@
 package com.example.project;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
-import java.sql.*;
-import java.util.Objects;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class SignUpPageController {
     @FXML
@@ -34,7 +35,6 @@ public class SignUpPageController {
     @FXML
     private TextField usernamebox;
 
-    //----------teachers& student radio button----------//
     @FXML
     private RadioButton studentsRadioButton;
 
@@ -52,39 +52,18 @@ public class SignUpPageController {
     }
 
     @FXML
-    void goToLoginPage(ActionEvent event) throws Exception {
-        try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("LogInPage.fxml")));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void goToLoginPage(ActionEvent event) {
+        SceneNavigator.switchTo(event, "LogInPage.fxml");
     }
 
     @FXML
     void signUpClicked(ActionEvent event) {
-        String url = "jdbc:mysql://127.0.0.1/musfiq";
-        String username = "root";
-        String password = "";
-        System.out.println("Connecting database...");
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            System.out.println("Database connected!");
-        } catch (SQLException e) {
-            throw new IllegalStateException("Cannot connect the database!", e);
-        }
-        Connection con;
-        PreparedStatement pst;
+        String userFullName = textOrEmpty(namebox);
+        String userEmail = textOrEmpty(emailbox);
+        String userUsername = textOrEmpty(usernamebox);
+        String userPassword = passwordbox.getText() == null ? "" : passwordbox.getText();
+        String confirmPassword = cpasswordbox.getText() == null ? "" : cpasswordbox.getText();
 
-        String user_Fullname = namebox.getText();
-        String user_email = emailbox.getText();
-        String User_username = usernamebox.getText();
-        String user_password = passwordbox.getText();
-        String c_Password = cpasswordbox.getText();
-
-
-        //------------------Handel Teachers or a Students ------------------//
         String userType = null;
         if (studentsRadioButton.isSelected()) {
             userType = "Student";
@@ -92,34 +71,41 @@ public class SignUpPageController {
             userType = "Teacher";
         }
 
-        if (user_Fullname != null && user_email != null && User_username != null && user_password.equals(c_Password) && userType != null) {
-            try {
-                con = DriverManager.getConnection(url, username, password);
-
-                pst = con.prepareStatement("INSERT INTO useraccounts(fullName,email,username,password,userType) VALUES(?,?,?,?,?)");
-                pst.setString(1, user_Fullname);
-                pst.setString(2, user_email);
-                pst.setString(3, User_username);
-                pst.setString(4, user_password);
-                pst.setString(5, userType);
-                pst.execute();
-
-                System.out.println("Insert successful");
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Welcome");
-                alert.setHeaderText("Login Successful");
-                alert.setContentText("Sign up Successful");
-                alert.showAndWait();
-
-            } catch (Exception e) {
-                e.getStackTrace();
-            }
-        } else {
+        if (userFullName.isBlank() || userEmail.isBlank() || userUsername.isBlank()
+                || userPassword.isBlank() || !userPassword.equals(confirmPassword) || userType == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Please enter all data correctly");
+            alert.setContentText("Fill every field, choose Student or Teacher, and make sure both passwords match.");
             alert.showAndWait();
+            return;
         }
 
+        try (Connection con = Database.connect();
+             PreparedStatement pst = con.prepareStatement(
+                     "INSERT INTO useraccounts(fullName,email,username,password,userType) VALUES(?,?,?,?,?)")) {
+            pst.setString(1, userFullName);
+            pst.setString(2, userEmail);
+            pst.setString(3, userUsername);
+            pst.setString(4, userPassword);
+            pst.setString(5, userType);
+            pst.executeUpdate();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Welcome");
+            alert.setHeaderText("Sign up successful");
+            alert.setContentText("You can now log in with your username or email.");
+            alert.showAndWait();
+            SceneNavigator.switchTo(event, "LogInPage.fxml");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Could not create account");
+            alert.setContentText("The username or email may already exist, or the database is unavailable.");
+            alert.showAndWait();
+        }
+    }
+
+    private static String textOrEmpty(TextField field) {
+        return field.getText() == null ? "" : field.getText().trim();
     }
 }

@@ -100,12 +100,7 @@ public class NewsfeedForQueryController implements Initializable {
 
         ///*** ...................  Database to ArrayList ...........................*****////////
         // Connect to the database
-        String url = "jdbc:mysql://127.0.0.1/musfiq";
-        String user = "root";
-        String password = "";
-        System.out.println("Connecting database...");
-
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+        try (Connection conn = Database.connect()) {
 
             // Execute a SELECT query
             String post = "SELECT post FROM allpost";
@@ -220,21 +215,20 @@ public class NewsfeedForQueryController implements Initializable {
 
     @FXML
     void creatPostButtonActionEvent(ActionEvent event) {
-        String nextScene = null;
-        if(currentUserType.compareTo("Student") == 0) {
-            nextScene = "CreatPostPageForStudent.fxml";
+        if (currentUserType == null) {
+            SceneNavigator.switchTo(event, "LogInPage.fxml");
+            return;
         }
-        else if (currentUserType.compareTo("Teacher") == 0) {
+        String nextScene = null;
+        if ("Student".equals(currentUserType)) {
+            nextScene = "CreatPostPageForStudent.fxml";
+        } else if ("Teacher".equals(currentUserType)) {
             nextScene = "CreatPostPageForTeacher.fxml";
         }
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource(nextScene));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-            stage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        if (nextScene == null) {
+            return;
         }
+        SceneNavigator.switchTo(event, nextScene);
     }
 
 

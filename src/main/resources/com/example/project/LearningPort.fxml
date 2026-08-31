@@ -24,7 +24,7 @@
                <graphic>
                   <ImageView>
                      <image>
-                        <Image url="@../../../../../../../Project/codeCAMPUSTrail-main%20(2)/codeCAMPUSTrail-main/codeCAMPUSTrail-main/src/main/resources/com/example/icons/back.PNG" />
+                        <Image url="@back.PNG" />
                      </image>
                   </ImageView>
                </graphic>
