@@ -37,34 +37,17 @@ public class StudentController implements Initializable {
 
         ///*** ...................  Database to ArrayList ...........................*****////////
         // Connect to the database
-        String url = "jdbc:mysql://127.0.0.1/musfiq";
-        String user = "root";
-        String password = "";
-        System.out.println("Connecting database...");
-
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+        try (Connection conn = Database.connect()) {
 
             // Execute a SELECT query
-            String studentName = "SELECT fullName FROM useraccounts";
+            String studentName = "SELECT fullName, email FROM useraccounts WHERE userType = 'Student'";
             PreparedStatement stmt = conn.prepareStatement(studentName);
             ResultSet rs = stmt.executeQuery();
 
-            String isStudent = "SELECT userType FROM useraccounts";
-            PreparedStatement stmt1 = conn.prepareStatement(isStudent);
-            ResultSet rs1 = stmt1.executeQuery();
-
-            String mail = "SELECT email FROM useraccounts";
-            PreparedStatement stmt2 = conn.prepareStatement(mail);
-            ResultSet rs2 = stmt2.executeQuery();
-
-            // Iterate over the ResultSet
-            while (rs.next() && rs1.next() && rs2.next()) {
-                if(((rs1.getString("userType")).compareTo("Student")) == 0){
-
-                    String mailValue = rs2.getString("email");
-                    String value = rs.getString("fullName");
-                    allStudents.add(value + "<split>" + mailValue);
-                }
+            while (rs.next()) {
+                String mailValue = rs.getString("email");
+                String value = rs.getString("fullName");
+                allStudents.add(value + "<split>" + mailValue);
             }
 
         } catch (SQLException e) {

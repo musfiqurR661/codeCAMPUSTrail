@@ -94,8 +94,18 @@ The project uses **MySQL**. A SQL dump is included at the root of the repository
 2. Import the schema:
 
 ```bash
-mysql -u root -p musfiq < musfiq.sql
+mysql -u root -p < musfiq.sql
 ```
+
+The dump creates the `musfiq` database if it does not already exist.
+
+Optional environment variables:
+
+| Variable | Default |
+|----------|---------|
+| `CODECAMPUS_DB_URL` | `jdbc:mysql://127.0.0.1:3306/musfiq?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC` |
+| `CODECAMPUS_DB_USER` | `root` |
+| `CODECAMPUS_DB_PASSWORD` | *(empty)* |
 
 The database includes the following tables:
 

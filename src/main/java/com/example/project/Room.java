@@ -76,7 +76,7 @@ public class Room extends Thread implements Initializable {
 
     public void connectSocket() {
         try {
-            socket = new Socket("localhost", 8889);
+            socket = new Socket("localhost", Server.PORT);
             System.out.println("Socket is connected with server!");
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream(), true);
@@ -156,6 +156,10 @@ public class Room extends Thread implements Initializable {
 
     public void send() {
         String msg = msgField.getText();
+        if (writer == null) {
+            msgRoom.appendText("Not connected to the chat server.\n");
+            return;
+        }
         writer.println(Controller.username + ": " + msg);
         msgRoom.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
         msgRoom.appendText("Me: " + msg + "\n");
@@ -202,14 +206,16 @@ public class Room extends Thread implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showProPic.setStroke(Color.valueOf("#90a4ae"));
-        Image image;
-        if(Controller.gender.equalsIgnoreCase("Male")) {
-            image = new Image("G:\\codeCAMPUSTrail\\src\\main\\java\\com\\example\\project\\icons\\user.png", false);
-        } else {
-            image = new Image("G:\\codeCAMPUSTrail\\src\\main\\java\\com\\example\\project\\icons\\female.png", false);
-            proImage.setImage(image);
+        boolean male = Controller.gender == null || Controller.gender.equalsIgnoreCase("Male");
+        String imagePath = male ? "/com/example/icons/user.png" : "/com/example/icons/female.png";
+        var imageStream = getClass().getResourceAsStream(imagePath);
+        if (imageStream != null) {
+            Image image = new Image(imageStream);
+            if (!male) {
+                proImage.setImage(image);
+            }
+            showProPic.setFill(new ImagePattern(image));
         }
-        showProPic.setFill(new ImagePattern(image));
         clientName.setText(Controller.username);
         connectSocket();
     }

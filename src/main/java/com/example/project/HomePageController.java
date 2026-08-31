@@ -53,7 +53,10 @@ public class HomePageController implements Initializable {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("contest.fxml"));
             Scene scene = new Scene(root);
-            scene.getStylesheets().add("tarek.css");
+            var stylesheet = getClass().getResource("tarek.css");
+            if (stylesheet != null) {
+                scene.getStylesheets().add(stylesheet.toExternalForm());
+            }
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
             stage.setScene(scene);
         } catch (Exception e) {
@@ -119,7 +122,7 @@ public class HomePageController implements Initializable {
     void openChatSystem(ActionEvent event) {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("chat_gui.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
             stage.setScene(scene);

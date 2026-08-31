@@ -11,6 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+CREATE DATABASE IF NOT EXISTS musfiq CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE musfiq;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,8 +30,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `allpost` (
-  `id` int(11) NOT NULL,
-  `post` varchar(3000) NOT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `post` varchar(3000) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -41,8 +44,8 @@ CREATE TABLE `allpost` (
 CREATE TABLE `useraccounts` (
   `id` int(11) NOT NULL,
   `fullName` text NOT NULL,
-  `email` text NOT NULL,
-  `username` text NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` text NOT NULL,
   `userType` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -65,7 +68,9 @@ INSERT INTO `useraccounts` (`id`, `fullName`, `email`, `username`, `password`, `
 -- Indexes for table `useraccounts`
 --
 ALTER TABLE `useraccounts`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_username` (`username`),
+  ADD UNIQUE KEY `unique_email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
